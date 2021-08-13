@@ -71,22 +71,31 @@ button {
 	background-color: #dedede;
   }
   .content {
+	background-image: url("../images/background.png");
+	background-size: 50px;
+	background-repeat: repeat;
 	position: relative;
 	left: 0;
 	right: 0;
 	overflow: hidden;
 	text-align: center;
 	background-color: lightblue;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 	min-width: 1240px;
 	
 	max-width: 2000px;
 	/*480 - header & footer*/
   }
   .video {
+	clip-path: inset(105px 185px 50px 100px);
 	height: 100% !important;
 	width: auto !important;
 	max-width: 100% !important;
+	margin-right: -130px;
+    margin-top: -90px;
+    margin-left: -50px;
+	margin-bottom: -40px;
+
   }
   
 
