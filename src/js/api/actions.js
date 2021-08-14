@@ -3,25 +3,7 @@ export const loginURL = "https://localhost:44336/api/Account/Login/";
 export const gameURL = "https://localhost:44336/api/Game/";
 export const accountGameURL = "https://localhost:44336/api/AccountGame/";
 
-// export function checkAccount(userId, password) {
-//     let isValid;
-//     fetch(accountURL + userId).then(response => response.json()).then(data => {
-//         if(data.password === password)
-//         {
-//             isValid = true;
-//         } else
-//         {
-//             isValid = false;
-//         }
-        
-//     });
-// }
 
-// export async function getAccount(accountId)
-// {
-//     const response = await fetch(accountURL + accountId);
-//     return await response.json();
-// }
 
 export function getAccount(accountId, callback)
 {
@@ -29,6 +11,8 @@ export function getAccount(accountId, callback)
    .then(response => response.json())
    .then(data => {callback(data)});
 }
+
+
 
 
 // export function getAccount(accountId) {

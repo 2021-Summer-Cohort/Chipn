@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  
   <audio id="diceAudio">
     <source src='../../sounds/dicethrow.wav' type="audio/wav">
 </audio>
@@ -55,6 +56,19 @@
             <li>If you roll a 7 you lose</li>
             <li>Roll anything else and you roll again</li>
           </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="id02" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <div>
+            How Much would you like to bet? <input id="bet-amt" type="number" min="5" max="100" />
+            <button id="place-bet">Place Bet</button>
+          </div>
 
         </div>
       </div>
@@ -199,8 +213,10 @@
 
     </div>
   </div> <!-- END dice-board -->
+
   <footer id="footer"></footer>
   <script src="craps_js.js"></script>
+
 </body>
 
 </html>
