@@ -23,8 +23,11 @@ export function populateAccountDiv() {
     if(accountId == null || accountId == undefined || accountId == "")
     {
         accountDiv.innerHTML = `
+        <div id="not-signed-in">
+        <h1> MUST BE 21+ TO PLAY!</h1>
             <button id="account-login">Log In</button>
             <button id="account-signup">Sign Up</button>
+            </div>
         `;
     }
     else

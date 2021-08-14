@@ -1,6 +1,10 @@
 const rulesBtn = document.getElementById("btn-rules");
+const betsBtn= document.getElementById("btn-bets");
 const modal = document.getElementById("myModal");
+const placeBetBtn = document.getElementById("place-bet");
+const betInput = document.getElementById("bet-amt");
 const diceSound = document.getElementById("diceAudio");
+let betAmt = 0;
 rulesBtn.addEventListener("click", function(){
   console.log("You clicked the li element");
   // if(modal.style.visibility !== "visible"){
@@ -13,6 +17,19 @@ rulesBtn.addEventListener("click", function(){
   // }
   document.getElementById('id01').style.display='block';
 });
+betsBtn.addEventListener("click", function(){
+  console.log("You clicked the li element");
+  document.getElementById('id02').style.display='block';
+});
+placeBetBtn.addEventListener("click", function(){
+  if(betInput.value > chips){
+    alert("Not enough Chips");
+  }else{
+  betAmt = parseInt(betInput.value); 
+  console.log(betAmt);}
+  document.getElementById('id02').style.display='none';
+
+});
 
 // Dice Roll
 
@@ -20,8 +37,8 @@ var winCount        = 0;
 var lossCount       = 0;
 var gameCount       = 0;
 var thePoint        = 0;
+var chips         = 100;
 
-// var cash         = 100;
 // var betInput     = document.getElementById('betField').value;
 // var bet          = parseInt(betInput);
 
@@ -33,13 +50,22 @@ var elWinOrLoss     = document.getElementById('winOrLoss');
 var elCrapsWins     = document.getElementById('crapWins');
 var elCrapsLosses   = document.getElementById('crapLosses');
 
-elComeOut.onclick   = function () {comeOutRoll(); diceSound.play();};
+elComeOut.onclick   = function () {checkBet(comeOutRoll); 
+};
 
-elPointRoll.onclick = function () {pointRoll(); diceSound.play();};
+elPointRoll.onclick = function () {checkBet(pointRoll); };
 
+function checkBet(roll){
+  if(betAmt > chips){
+    alert("Bet is set too Damn High!! GO GET MONEY!!!");
+  }else{
+    roll();
+  }
+}
 // Come Out Roll Function
-function comeOutRoll() {
 
+function comeOutRoll() {
+  diceSound.play()
   // Initial dice variables
   var diceOne   = Math.floor((Math.random() * 6) + 1);
   var diceTwo   = Math.floor((Math.random() * 6) + 1);
@@ -67,9 +93,11 @@ function comeOutRoll() {
   // if rollTotal = 7 or 11; Player wins
   if (rollTotal === 7 || rollTotal === 11) {
     Win();
+    
     // cash += betField;
   } else if (rollTotal === 2 || rollTotal === 3 || rollTotal === 12) {
     Lose();
+    
     // cash -= betField;
   } else {
     // sets the point and changes button display
@@ -87,7 +115,7 @@ function comeOutRoll() {
 
 //POINT ROLL FUNCTION
 function pointRoll() {
-
+  diceSound.play()
   // sets dice variables
   var diceOne   = Math.floor((Math.random() * 6) + 1);
   var diceTwo   = Math.floor((Math.random() * 6) + 1);
@@ -113,6 +141,7 @@ function pointRoll() {
   if (rollTotal === 7) {
     thePoint = 0;
     Lose();
+    
     // cash -= betField;
     elComeOut.style.display = 'block';
     elPointRoll.style.display = 'none';
@@ -149,6 +178,8 @@ function Win()
   winCount++; // updates win count
   gameCount++;
   elWinOrLoss.innerHTML = 'You Won!';
+  chips += betAmt;
+    console.log(chips);
 }
 function Lose()
 {
@@ -156,4 +187,6 @@ function Lose()
   lossCount++;
   gameCount++;
   elWinOrLoss.innerHTML = 'LOSER!';
+  chips -= betAmt;
+    console.log(chips);
 }
