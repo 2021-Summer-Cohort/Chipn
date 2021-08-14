@@ -130,7 +130,8 @@ button {
   line-height: 0.9;
   text-align: center;
 }
-/* #account{
+#not-signed-in{
+	
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -142,4 +143,4 @@ button {
 		background-image: url("../images/image.png");
 		background-repeat: no-repeat;
 		align-items: center;
-} */
+}

@@ -16,6 +16,7 @@ html {
     background-repeat: no-repeat, repeat;
     background-position: center, right;
     background-size: contain, 120px;
+    perspective: 1000px;
     color: #ffffcc; 
   } 
     
@@ -101,6 +102,7 @@ html {
       text-shadow: 5px 5px #2e2626;
       float: left; 
       margin: 0;
+      margin-left: 50px;
     }
     .w3-modal{
       height:200%; /*200% for static with blackspace below, auto for no blackspace below but dynamic.*/

@@ -3,6 +3,8 @@ import {setCookie} from "../utilities/cookie";
 
 export function displayLoginForm(){
     const loginForm = `
+    <div id="not-signed-in">
+    <h1> MUST BE 21+ TO PLAY!</h1>
         <p class='text-danger' id='loginResponse'></p>
         <label for="login-username">Username: </label>
         <input type="text" id="LoginAccount_UserName" />
@@ -10,7 +12,7 @@ export function displayLoginForm(){
         <input type="password" id="LoginAccount_Password" />
         <button id="login-cancel">Cancel</button>
         <button id="login-submit">Submit</button>
-
+    </div>
     `;
     return loginForm;
 }
