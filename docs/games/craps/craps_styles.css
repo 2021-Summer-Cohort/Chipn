@@ -11,20 +11,14 @@ html {
     margin-left: 20; }
   
   body {
-    background-image: url("images/floorTile.png");
-    z-index: -1;
-    background-repeat: repeat;
-    height: 100%;
-    width: 100%;
+    background-image: url("./images/crapsTableLogo.png"), url("./images/floorTile.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat, repeat;
+    background-position: center, right;
+    background-size: contain, 120px;
     color: #ffffcc; 
   } 
-  #floorTiles{
-    background-image: url("images/crapsTableLogo.png");
-    background-repeat: no-repeat;
-    background-size: 1280px;
-    perspective: 1000px;
-  }
-  
+    
   #pointRollButton {
     display: none; }
   
