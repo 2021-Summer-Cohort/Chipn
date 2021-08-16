@@ -1,3 +1,20 @@
+//import {getAccount} from "../../../src/js/api/actions";
+
+/*
+FETCH.getAccount(accountId, data => {
+            accountDiv.innerHTML =`
+            Name: ${data.userName}<br />
+            Chip Count: ${data.chipCount}<br />
+            <button id="logout">Logout</button>
+            `;
+            const logoutButton = document.getElementById("logout");
+            logoutButton.addEventListener("click", () => {
+                deleteCookie("UserId");
+                location.reload();
+            });
+        });
+*/
+
 const rulesBtn = document.getElementById("btn-rules");
 const betsBtn= document.getElementById("btn-bets");
 const modal = document.getElementById("myModal");
@@ -37,7 +54,75 @@ var winCount        = 0;
 var lossCount       = 0;
 var gameCount       = 0;
 var thePoint        = 0;
-var chips         = 100;
+var chips   = undefined;
+
+/*
+export function getAccount(accountId, callback)
+{
+   fetch(accountURL + accountId)
+   .then(response => response.json())
+   .then(data => {callback(data)});
+}
+*/
+const accountURL = "https://localhost:44336/api/Account/";
+function ModifyChipCount(ChipsToChange) //can be positive or negative.
+{
+   let accountId = getCookie("UserId");if(accountId!==null&&accountId!==undefined&&accountId!=="")
+   {
+      var RequestBody=null;
+      fetch(accountURL+accountId).then(r=>r.json()).then(d=>{
+         RequestBody={
+            Id:accountId,
+            age:d.age,
+            chipCount:d.chipCount+ChipsToChange,
+            email:d.email,
+            password:d.password,
+            userName:d.userName
+         };
+         fetch(accountURL + accountId,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(RequestBody)}).then(response => response.text()).then(data => {
+            fetch(accountURL + accountId).then(response => response.json()).then(data => {
+               console.log(data);
+            });
+         });
+      });
+   }
+   else
+   {
+
+   }
+}
+function getAccount(accountId, callback)
+{
+   fetch(accountURL + accountId)
+   .then(response => response.json())
+   .then(data => {callback(data)});
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+const ChipCountInput=document.getElementById("ChipCountInput");
+function GetChipCount()
+{
+  let accountId = getCookie("UserId");
+  getAccount(accountId, data => {
+    ChipCountInput.value=data.chipCount;
+    chips=ChipCountInput.value;
+    console.log("ChipCountInput.value="+ChipCountInput.value);
+  });
+}
+GetChipCount();
 
 // var betInput     = document.getElementById('betField').value;
 // var bet          = parseInt(betInput);
@@ -56,6 +141,7 @@ elComeOut.onclick   = function () {checkBet(comeOutRoll);
 elPointRoll.onclick = function () {checkBet(pointRoll); };
 
 function checkBet(roll){
+  console.log("Chips later on: "+chips);
   if(betAmt > chips){
     alert("Bet is set too Damn High!! GO GET MONEY!!!");
   }else{
@@ -178,7 +264,9 @@ function Win()
   winCount++; // updates win count
   gameCount++;
   elWinOrLoss.innerHTML = 'You Won!';
-  chips += betAmt;
+  ModifyChipCount(betAmt*1);
+  GetChipCount();
+  //chips += betAmt;
     console.log(chips);
 }
 function Lose()
@@ -187,6 +275,8 @@ function Lose()
   lossCount++;
   gameCount++;
   elWinOrLoss.innerHTML = 'LOSER!';
-  chips -= betAmt;
+  ModifyChipCount(betAmt*-1);
+  GetChipCount();
+  //chips -= betAmt;
     console.log(chips);
 }
