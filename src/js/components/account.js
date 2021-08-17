@@ -3,8 +3,7 @@ import {displayLoginForm,loginAccount_Submit} from "./login";
 import {displaySignupForm,createAccount_Submit} from "./signup";
 import {getCookie, setCookie, deleteCookie} from "../utilities/cookie";
 
-import {GetChipCount,SetChipCount,ModifyChipCount,UpdateStuff} from "../api/actions";
-
+import {displayUpdateForm, setupUpdateForm} from "./update";
 let accountId;
 
 export function createAccountDiv() {
@@ -37,11 +36,19 @@ export function populateAccountDiv() {
             Name: ${data.userName}<br />
             Chip Count: ${data.chipCount}<br />
             <button id="logout">Logout</button>
+            <br/>
+            <button id="acct-update">Update</button>
+
             `;
             const logoutButton = document.getElementById("logout");
             logoutButton.addEventListener("click", () => {
                 deleteCookie("UserId");
                 location.reload();
+            });
+            const acctUpdateButton = document.getElementById("acct-update");
+            acctUpdateButton.addEventListener("click", () => {
+                accountDiv.innerHTML = displayUpdateForm();
+                setupUpdateForm();
             });
         });
     }
@@ -78,6 +85,12 @@ export function setupAccountForms()
     CreateAccount_Submit.addEventListener("click",function(){
         createAccount_Submit();
     });
+
+    const CreateAccount_Cancel=document.getElementById("signup-cancel");
+    CreateAccount_Cancel.addEventListener("click",function(){
+        location.reload();
+
+    });
 }
 export function setupLoginForms()
 {
@@ -87,5 +100,10 @@ export function setupLoginForms()
     const LoginAccount_Submit=document.getElementById("login-submit");
     LoginAccount_Submit.addEventListener("click",function(){
         loginAccount_Submit();
+    });
+    const LoginAccount_Cancel=document.getElementById("login-cancel");
+    LoginAccount_Cancel.addEventListener("click",function(){
+        location.reload();
+
     });
 }

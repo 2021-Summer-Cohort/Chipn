@@ -26,6 +26,10 @@ export function displaySignupForm() {
 }
 
 export function createAccount_Submit() {
+    if(CreateAccount_Age.value < 21){
+        alert('Must Be 21+')
+        return;
+    }
     let RequestBody = {
         UserName: CreateAccount_UserName.value,
         Email: CreateAccount_Email.value,
@@ -41,6 +45,7 @@ export function createAccount_Submit() {
         body: JSON.stringify(RequestBody)
     }).then(response => response.json()).then(data => {
         setCookie("UserId", data.id, .1);
+        console.log(data);
         location.reload();
     });
 }
