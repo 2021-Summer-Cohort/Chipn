@@ -8,20 +8,36 @@ const seat5CardsDiv = document.getElementById("seat5-cards");
 const seat6CardsDiv = document.getElementById("seat6-cards");
 const seat7CardsDiv = document.getElementById("seat7-cards");
 
+const buttonsDiv = document.getElementById("buttons");
+
 const dealButton = document.getElementById("deal");
 const hitButton = document.getElementById("hit");
 
 const theDeck = newDeck(6);
 
-let availableSeats = [seat1CardsDiv, seat2CardsDiv, seat3CardsDiv, seat5CardsDiv, seat6CardsDiv, seat7CardsDiv];
-let numberOfOtherPlayers = getRandomNumber(1, 6);
-for(let i = 0; i < numberOfOtherPlayers; i++)
-{
-    
-}
+let chips = getCookie("UserId");
+console.log(chips);
 
 
 
+// // Random generation of other players
+
+// let playerNames = ["Carlos", "Chad", "Davis", "Dayna", "Deed", "Deairus", "Gabriel", "Gavin", "Jamal", "Joshua", "Justin", "Nina", "Pearl", "William"];
+// let availableSeats = [seat1CardsDiv, seat2CardsDiv, seat3CardsDiv, seat5CardsDiv, seat6CardsDiv, seat7CardsDiv];
+// let numberOfOtherPlayers = getRandomNumber(1, 6);
+// let playersDealOrder = [];
+
+// for(let i = 0; i < numberOfOtherPlayers; i++)
+// {
+//     let seatIndex = getRandomNumber(1, availableSeats.length) - 1;
+//     let chosenSeat = availableSeats.splice(seatIndex, 1);
+//     let nameIndex = getRandomNumber(1, playerNames.length) - 1;
+//     let chosenName = playerNames.splice(nameIndex, 1);
+//     let playerCreated = { name: chosenName[0].toString(), seat: chosenSeat[0], hand: [] };
+//     playersDealOrder.push(playerCreated);
+// }
+// console.log(playersDealOrder);
+// playersDealOrder[0].seat.innerText = "HELLO";
 
 
 
@@ -29,7 +45,7 @@ for(let i = 0; i < numberOfOtherPlayers; i++)
 
 let playerName = "Davis Kyle Murphy"
 
-let dealer = { name: "Dealer", seat: dealerCardsDiv, hand: [] }
+let dealer = { name: "Dealer", seat: dealerCardsDiv, hand: [] };
 let player = { name: playerName, seat: seat4CardsDiv, hand: [] };
 let otherPlayerA = { name: "Cottontail", seat: seat1CardsDiv, hand: [] };
 let otherPlayerB = { name: "Flopsy", seat: seat3CardsDiv, hand: [] };
@@ -56,6 +72,9 @@ for (let player of playersDealOrder) {
 for (let player of playersDealOrder) {
     player.seat.innerHTML = '<span class="player-name">' + player.name + "</span><br />";
 }
+
+
+
 
 
 // let [otherHandA, otherHandB, playerHand, otherHandC, dealerHand] = allPlayersDealOrder.hand;
@@ -90,6 +109,7 @@ function PlaceCardDown(card, cardsDiv) {
 }
 
 
+
 trueShuffle(theDeck);
 
 
@@ -107,11 +127,11 @@ dealButton.addEventListener("click", function() {
     }
 });
 
-hitButton.addEventListener("click", function() {
-    hit(theDeck, player.hand);
-    let cardDeltIndex = player.hand.length - 1;
-    PlaceCard(player.hand[cardDeltIndex], player.seat);
-});
+// hitButton.addEventListener("click", function() {
+//     hit(theDeck, player.hand);
+//     let cardDeltIndex = player.hand.length - 1;
+//     PlaceCard(player.hand[cardDeltIndex], player.seat);
+// });
 
 function hit(deck, hand)
 {

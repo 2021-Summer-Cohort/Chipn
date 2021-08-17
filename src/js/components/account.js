@@ -22,27 +22,52 @@ export function populateAccountDiv() {
     if(IsNotEmpty(accountId))
     {
         API.getAccount(accountId, data => {
-            accountDiv.innerHTML =`
-                <span id="account-username">${data.userName}</span>
-                <span id="account-chips">${data.chipCount}</span>
-                <button id="account-logout" class="account-button">Logout</button>
-                <button id="account-update" class="account-button">Update</button>
-            `;
+            if(data.chipCount <= 0) {
+                console.log(data.chipCount)
+                accountDiv.innerHTML =`
+                    <span id="account-username">${data.userName}</span>
+                    <span id="account-no-chips">Out of Chips!</span>
+                    <button id="add-chips">Add More Chips</button>
+                    <button id="account-logout" class="account-button">Logout</button>
+                    <button id="account-update" class="account-button">Update</button>
+                `;
+
+                const addChipsButton = document.getElementById("add-chips");
+
+                addChipsButton.addEventListener("click", () => {
+                    API.SetChipCount(100);
+                    accountDiv.innerHTML =`
+                    <span id="account-username">${data.userName}</span>
+                    <span id="account-chips">100</span>
+                    <button id="account-logout" class="account-button">Logout</button>
+                    <button id="account-update" class="account-button">Update</button>
+                `;
+                });
+            } else {
+                accountDiv.innerHTML =`
+                    <span id="account-username">${data.userName}</span>
+                    <span id="account-chips">${data.chipCount}</span>
+                    <button id="account-logout" class="account-button">Logout</button>
+                    <button id="account-update" class="account-button">Update</button>
+                `;
+
+                const logoutButton = document.getElementById("account-logout");
+                const updateButton = document.getElementById("account-update");
+
+                logoutButton.addEventListener("click", () => {
+                    deleteCookie("UserId");
+                    location.reload();
+                });
+                updateButton.addEventListener("click", () => {
+                    accountDiv.innerHTML = displayUpdateForm();
+                    setupUpdateForm();
+                });
+            }
+
             accountDiv.className = "logged-in";
 
-            const logoutButton = document.getElementById("account-logout");
-            const updateButton = document.getElementById("account-update");
-
-            logoutButton.addEventListener("click", () => {
-                deleteCookie("UserId");
-                location.reload();
-            });
-            updateButton.addEventListener("click", () => {
-                accountDiv.innerHTML = displayUpdateForm();
-                setupUpdateForm();
-            });
-
             setCookie("UserEmail", data.email, .1);
+            setCookie("ChipCount", data.chipCount, .1);
         });
     }
     else {

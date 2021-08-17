@@ -147,6 +147,7 @@ button {
 		color: #ffffcc; 
 		background-image: url("../images/image.png");
 		background-repeat: no-repeat;
+		background-position: center;
 		align-items: center;
 }
 
