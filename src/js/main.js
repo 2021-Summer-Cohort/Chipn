@@ -6,7 +6,6 @@ startBtn.addEventListener("click", function() {
 });
 */
 export default () => {
-    console.log("Hell world.");
     footer();
     header();
 }

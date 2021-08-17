@@ -8,5 +8,5 @@ export default function header() {
     headerContent.appendChild(nav());
     headerContent.appendChild(document.createElement("hr"));
     ACCOUNT.populateAccountDiv();
-    ACCOUNT.displayAccountForms();
+    // ACCOUNT.displayAccountForms();
 }

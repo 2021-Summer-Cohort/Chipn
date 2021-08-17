@@ -1,7 +1,7 @@
 export default function nav() {
     let navBar = document.createElement("nav");
     navBar.id = "site-nav";
-    navBar.style.textAlign = "center";
+    // navBar.style.textAlign = "center";
     navBar.innerHTML = `
         <nav_tag id="slotsNav">
             <a href="/games/slots/slots.html" style="display:inline-block;">Slots</a>

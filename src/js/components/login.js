@@ -1,32 +1,41 @@
-import {loginURL} from "../api/actions";
+import {loginURL} from "../utilities/api-actions";
 import {setCookie} from "../utilities/cookie";
+import {displayWelcome} from "./welcome";
 
-export function displayLoginForm(){
+export function displayLoginForm() {
     const loginForm = `
-    <div id="not-signed-in">
-    <h1> MUST BE 21+ TO PLAY!</h1>
-        <p class='text-danger' id='loginResponse'></p>
-        <label for="login-username">Username: </label>
+        <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
+        <p class='text-danger' id='login-response'>Please log in to enter the casino.</p>
+        <label for="LoginAccount_UserName">User Name: </label>
         <input type="text" id="LoginAccount_UserName" />
-        <label for="login-password">Password: </label>
+        <label for="LoginAccount_Password">Password: </label>
         <input type="password" id="LoginAccount_Password" />
         <button id="login-cancel">Cancel</button>
         <button id="login-submit">Submit</button>
-    </div>
     `;
     return loginForm;
 }
 
-export function loginAccount_Submit()
-{
+export function setupLoginForm() {
+    const LoginAccount_Submit=document.getElementById("login-submit");
+    const LoginAccount_Cancel=document.getElementById("login-cancel");
+
+    LoginAccount_Submit.addEventListener("click",function(){
+        loginAccountSubmit();
+    });
+    LoginAccount_Cancel.addEventListener("click",function(){
+        location.reload();
+    });
+}
+
+export function loginAccountSubmit() {
+    const LoginAccount_UserName = document.getElementById("LoginAccount_UserName");
+    const LoginAccount_Password = document.getElementById("LoginAccount_Password");
+
     let RequestBody={
         UserName:LoginAccount_UserName.value,
         Password:LoginAccount_Password.value
     };
-
-    console.log(RequestBody);
-    console.log(LoginAccount_UserName.value);
-    console.log(LoginAccount_Password.value);
 
     fetch(loginURL,{
         method:"POST",
@@ -35,15 +44,11 @@ export function loginAccount_Submit()
         },
         body:JSON.stringify(RequestBody)
     }).then(response => response.json()).then(data => {
-        console.log("returned data: " + data);
-        console.dir(data);
         if(data.status == "404"){
-            document.getElementById("loginResponse").innerHTML = "Your username or password does not match our records.";
+            document.getElementById("login-response").innerHTML = "Your user name or password does not match our records.";
         }else{
-            //do something with Cookies
-            //setCookie("UserName", data.userName, .1);
             setCookie("UserId", data.id, .1);
-            location.reload();
+            displayWelcome();
         }
     });
 }

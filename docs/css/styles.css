@@ -130,8 +130,13 @@ button {
   line-height: 0.9;
   text-align: center;
 }
-#not-signed-in{
-	
+
+
+#account.logged-in {
+	float: left;
+}
+
+#account.logged-out {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -143,4 +148,18 @@ button {
 		background-image: url("../images/image.png");
 		background-repeat: no-repeat;
 		align-items: center;
+}
+
+#account.welcome {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(170, 133, 57, 0.7);
+	z-index: 9998;
+	color: #ffffcc; 
+	background-image: url("../images/image.png");
+	background-repeat: no-repeat;
+	align-items: center;
 }
