@@ -39,7 +39,8 @@ betsBtn.addEventListener("click", function(){
   document.getElementById('id02').style.display='block';
 });
 placeBetBtn.addEventListener("click", function(){
-  if(betInput.value > chips){
+  console.log(betInput.value +">"+ ChipCountInput.value);
+  if(parseInt(betInput.value) > parseInt(ChipCountInput.value)){
     alert("Not enough Chips");
   }else{
   betAmt = parseInt(betInput.value); 
@@ -275,7 +276,12 @@ function Lose()
   lossCount++;
   gameCount++;
   elWinOrLoss.innerHTML = 'LOSER!';
-  ModifyChipCount(betAmt*-1);
+  /*
+  fetch().then().then(d=>{
+
+  });
+  */
+  ModifyChipCount((betAmt*-1));
   GetChipCount();
   //chips -= betAmt;
     console.log(chips);
