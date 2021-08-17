@@ -41,7 +41,13 @@ namespace Chipn.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
         {
-            return await _context.Accounts.ToListAsync();
+            List<Account> accounts = await _context.Accounts.ToListAsync();
+            foreach (Account account in accounts)
+            {
+                account.Password = "";
+                account.Email = "";
+            }
+            return accounts;
         }
 
         // GET: api/Account/5

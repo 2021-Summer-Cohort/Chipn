@@ -5,7 +5,8 @@
         <link rel="stylesheet" href="blackjack_styles.css">
     </head>
     <body>
-<header id="site-header"></header>
+        <header id="site-header"></header>
+
         <div id="table">
             <div id="dealer-cards" class="seat"></div>
             <div id="seat1-cards" class="seat other-player"></div>
@@ -15,13 +16,16 @@
             <div id="seat5-cards" class="seat other-player"></div>
             <div id="seat6-cards" class="seat other-player"></div>
             <div id="seat7-cards" class="seat other-player"></div>
+
+            <div id="buttons">
+                <button id="deal">Deal</button>
+                <!-- <button id="hit">Hit</button> -->
+            </div>
         </div>
-        <div id="buttons">
-            <button id="deal">Deal</button>
-            <button id="hit">Hit</button>
-        </div>
-<footer id="footer"></footer>
-<script src="/main.js"></script>
+
+        <footer id="site-footer"></footer>
+
+        <script src="/main.js"></script>
         <script src="../../utilities/cards/deck.js"></script>
         <script src="blackjack_js.js"></script>
     </body>

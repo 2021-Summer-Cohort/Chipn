@@ -22,10 +22,10 @@ namespace Chipn
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Account>().HasData(
-				new Account() { Id = 1, UserName = "ChipnAdministrator", ChipCount = long.MaxValue, Email = "admin@chipn.gov", Password = "NoneOfYourBusiness", Age = int.MaxValue },
-				new Account() { Id = 2, UserName = "ChipnAdministratorCarlos", ChipCount = long.MinValue, Email = "carlos@chipn.gov", Password = "NoneOfYourCarlos", Age = 36 },
-				new Account() { Id = 3, UserName = "ChipnAdministratorDavis", ChipCount = long.MinValue, Email = "davis@chipn.gov", Password = "NoneOfYourDavis", Age = 27 },
-				new Account() { Id = 4, UserName = "ChipnAdministratorGavin", ChipCount = long.MinValue, Email = "gavin@chipn.gov", Password = "NoneOfYourGavio", Age = 22 }
+				new Account() { Id = 1, UserName = "ChipnAdmin", ChipCount = 1000, Email = "admin@chipn.gov", Password = "�O���k�w���[���ף�%", Age = 99 },
+				new Account() { Id = 2, UserName = "carlos", ChipCount = 420, Email = "carlos@chipn.gov", Password = "�O���k�w���[���ף�%", Age = 36 },
+				new Account() { Id = 3, UserName = "davis", ChipCount = 690, Email = "davis@chipn.gov", Password = "�O���k�w���[���ף�%", Age = 27 },
+				new Account() { Id = 4, UserName = "gavin", ChipCount = 500, Email = "gavin@chipn.gov", Password = "�O���k�w���[���ף�%", Age = 22 }
 			);
 
 			modelBuilder.Entity<Game>().HasData(
@@ -37,9 +37,9 @@ namespace Chipn
 
 			modelBuilder.Entity<AccountGame>().HasData(
 				new AccountGame() { Id = 1, AccountId = 1, GameId = 1, Wagers = 100, Payouts = 0 },
-				new AccountGame() { Id = 2, AccountId = 2, GameId = 2, Wagers = 700, Payouts = 210 },
-				new AccountGame() { Id = 3, AccountId = 3, GameId = 3, Wagers = 200, Payouts = 20 },
-				new AccountGame() { Id = 4, AccountId = 4, GameId = 4, Wagers = 80, Payouts = 45 }
+				new AccountGame() { Id = 2, AccountId = 1, GameId = 3, Wagers = 700, Payouts = 210 },
+				new AccountGame() { Id = 3, AccountId = 2, GameId = 2, Wagers = 250, Payouts = 20 },
+				new AccountGame() { Id = 4, AccountId = 3, GameId = 1, Wagers = 80, Payouts = 450 }
 			);
 		}
 	}

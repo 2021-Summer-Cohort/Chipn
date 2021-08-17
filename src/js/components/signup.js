@@ -15,7 +15,7 @@ export function displaySignupForm() {
         <label for="SignupAccount_Password">Password: </label>
         <input type="password" id="SignupAccount_Password" />
 
-        <input type="hidden" id="SignupAccount_ChipCount" value="1000">
+        <input type="hidden" id="SignupAccount_ChipCount" value="0">
 
         <button id="signup-cancel">Cancel</button>
         <button id="signup-submit">Submit</button>

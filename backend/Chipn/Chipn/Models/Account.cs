@@ -14,16 +14,5 @@ namespace Chipn.Models
 		public string Email { get; set; }
 		public int Age { get; set; }
 		public virtual List<AccountGame> AccountGames { get; set; }
-
-		/*
-		public decimal Money {get;set;}
-		public string BitcoinAddress {get;set;}
-		public string DOB {get;set;}
-		public string Contract {get;set;}
-		public int BloodCount {get;set;}
-		public int BloodType {get;set;}
-		public string CreditCard {get;set;}
-		public string SSN {get;set;}
-		*/
 	}
 }
