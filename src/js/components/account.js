@@ -1,7 +1,8 @@
-import * as FETCH from "../api/actions";
-import {displayLoginForm,loginAccount_Submit} from "./login";
-import {displaySignupForm,createAccount_Submit} from "./signup";
+import * as API from "../utilities/api-actions";
+import {displayLoginForm,setupLoginForm} from "./login";
+import {displaySignupForm,setupSignupForm} from "./signup";
 import {getCookie, setCookie, deleteCookie} from "../utilities/cookie";
+import {IsNotEmpty} from "../utilities/conditional";
 
 import {displayUpdateForm, setupUpdateForm} from "./update";
 let accountId;
@@ -9,101 +10,62 @@ let accountId;
 export function createAccountDiv() {
     let accountDiv = document.createElement("div");
     accountDiv.id = "account";
-    accountDiv.style.float = "right";
-    accountDiv.innerHTML = " ";
+    // accountDiv.style.float = "right";
+    accountDiv.innerText = " ";
     return accountDiv;
-    
 }
 
 export function populateAccountDiv() {
     accountId = getCookie("UserId");
     const accountDiv = document.getElementById("account");
 
-    if(accountId == null || accountId == undefined || accountId == "")
+    if(IsNotEmpty(accountId))
     {
-        accountDiv.innerHTML = `
-        <div id="not-signed-in">
-        <h1> MUST BE 21+ TO PLAY!</h1>
-            <button id="account-login">Log In</button>
-            <button id="account-signup">Sign Up</button>
-            </div>
-        `;
-    }
-    else
-    {
-        FETCH.getAccount(accountId, data => {
+        API.getAccount(accountId, data => {
             accountDiv.innerHTML =`
-            Name: ${data.userName}<br />
-            Chip Count: ${data.chipCount}<br />
-            <button id="logout">Logout</button>
-            <br/>
-            <button id="acct-update">Update</button>
-
+                <span id="account-username">${data.userName}</span>
+                <span id="account-chips">${data.chipCount}</span>
+                <button id="account-logout" class="account-button">Logout</button>
+                <button id="account-update" class="account-button">Update</button>
             `;
-            const logoutButton = document.getElementById("logout");
+            accountDiv.className = "logged-in";
+
+            const logoutButton = document.getElementById("account-logout");
+            const updateButton = document.getElementById("account-update");
+
             logoutButton.addEventListener("click", () => {
                 deleteCookie("UserId");
                 location.reload();
             });
-            const acctUpdateButton = document.getElementById("acct-update");
-            acctUpdateButton.addEventListener("click", () => {
+            updateButton.addEventListener("click", () => {
                 accountDiv.innerHTML = displayUpdateForm();
                 setupUpdateForm();
             });
+
+            setCookie("UserEmail", data.email, .1);
         });
     }
-}
+    else {
+        
+        accountDiv.innerHTML = `
+            <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
+            <p>Please sign up or log in to enter the casino.</p>
+            <button id="account-signup">Sign Up</button>
+            <button id="account-login">Log In</button>
+        `;
+        accountDiv.className = "logged-out";
 
-export function displayAccountForms(){
-    const accountDiv = document.getElementById("account");
+        const signupButton = document.getElementById("account-signup");
+        const loginButton = document.getElementById("account-login");
 
-    const loginButton = document.getElementById("account-login");
-    const signupButton = document.getElementById("account-signup");
-
-    if(signupButton && loginButton)
-    {
         signupButton.addEventListener('click', () => {
             accountDiv.innerHTML = displaySignupForm();
-            setupAccountForms();
+            setupSignupForm();
         });
 
         loginButton.addEventListener('click', () => {
             accountDiv.innerHTML = displayLoginForm();
-            setupLoginForms();
+            setupLoginForm();
         });
     }
-}
-export function setupAccountForms()
-{
-    const CreateAccount_UserName=document.getElementById("CreateAccount_UserName");
-    const CreateAccount_Email=document.getElementById("CreateAccount_Email");
-    const CreateAccount_Age=document.getElementById("CreateAccount_Age");
-    const CreateAccount_Password=document.getElementById("CreateAccount_Password");
-    const CreateAccount_ChipCount=document.getElementById("CreateAccount_ChipCount");
-
-    const CreateAccount_Submit=document.getElementById("signup-submit");
-    CreateAccount_Submit.addEventListener("click",function(){
-        createAccount_Submit();
-    });
-
-    const CreateAccount_Cancel=document.getElementById("signup-cancel");
-    CreateAccount_Cancel.addEventListener("click",function(){
-        location.reload();
-
-    });
-}
-export function setupLoginForms()
-{
-    const LoginAccount_UserName=document.getElementById("LoginAccount_UserName");
-    const LoginAccount_Password=document.getElementById("LoginAccount_Password");
-
-    const LoginAccount_Submit=document.getElementById("login-submit");
-    LoginAccount_Submit.addEventListener("click",function(){
-        loginAccount_Submit();
-    });
-    const LoginAccount_Cancel=document.getElementById("login-cancel");
-    LoginAccount_Cancel.addEventListener("click",function(){
-        location.reload();
-
-    });
 }
