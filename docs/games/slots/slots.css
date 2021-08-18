@@ -1,8 +1,238 @@
+ /* nav bar starts here */
+ #header{
+display: flex;
+align-items: center;
+  justify-items: center;
+  justify-content: center; 
+  width: 100%;
+padding-left: 2%;
+padding-right: 2%;
+background-color: rgba(0, 0, 0, 0.541);
+}
+
+#navbar1{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 22%;
+  
+} 
+#navbar2 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  
+  width: 36%;
+}
+#navbar3{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width:22%;
+  
+}
+
+#logo{
+ 
+  padding-bottom: 0%;
+  padding-top: 0%;
+  
+  margin-left: auto; 
+  margin-right: auto;
+  display:block; 
+  width: 100%;
+  
+}
+ #homeNavImage{
+background-image: url("images/homeNav.png");
+background-repeat: no-repeat;
+background-position: center;
+height: 100px;
+width:100%;
+border-color: #dbaa40;
+border-width: 10px;
+border-style:double;
+background-size: 90%;
+/* background-color:rgba(255, 255, 255, 0.144); */
+background-color:#dbaa4079;
+transition-property: background-image;
+transition-duration: 1s; 
+margin-left: auto; 
+margin-right: auto;
+display:block;
+} 
+#homeNavImage:hover{
+background-image: url("images/homeNavLit.png");
+}
+#aboutNavImage{
+  background-image: url("images/aboutNav.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100%;
+  border-color: #dbaa40;
+  border-width: 10px;
+  border-style:double;
+  background-size: 100%;
+  background-color:#dbaa4079;
+  transition-property: background-image;
+  transition-duration: 1s;
+}
+#aboutNavImage:hover{
+  background-image: url("images/aboutNavLit.png");
+}
+#crapsNavImage{
+  background-image: url("images/crapsNav.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100%;
+  border-color: #dbaa40;
+  border-width: 10px;
+  border-style:double;
+  background-size: 100%;
+  background-color:#dbaa4079;
+  transition-property: background-image;
+  transition-duration: 1s;
+}
+#crapsNavImage:hover{
+  background-image: url("images/crapsNavLit.png");
+}
+#blackjackNavImage{
+  background-image: url("images/blackjackNav.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100%;
+  border-color: #dbaa40;
+  border-width: 10px;
+  border-style:double;
+  background-size: 100%;
+  /* background-color:#76000073; */
+  background-color:#dbaa4079;
+  transition-property: background-image;
+  transition-duration: 1s;
+  
+}
+#blackjackNavImage:hover{
+  background-image: url("images/blackjackNavLit.png");
+} 
+#slotsNavImage{
+  background-image: url("images/slotsNav.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100%;
+  border-color: #dbaa40;
+  border-width: 10px;
+border-style:double;
+  background-size: 100%;
+  background-color:#dbaa4079;
+  transition-property: background-image;
+  transition-duration: 1s;
+}
+#slotsNavImage:hover{
+  background-image: url("images/slotsNavLit.png");
+}
+
+#navStyleImage{
+  width: 100%;
+}
+
+hr{
+  border-top: #dbaa40 solid 15px;
+  /* border-bottom: #8f6c20 solid 10px; */
+  margin:0%;
+  padding:0%;
+  border-style:double
+
+} 
+
+#SlotsTitle{ 
+  width: 50%;
+  margin-left: auto; 
+  margin-right: auto;
+  display:block;
+ 
+}
+
+
+#HowToPlayBtn{
+  margin-left: 5%;
+  margin-top: 2%;
+}
+#navStyle1{
+
+margin:0;
+padding:0;
+width: 10%;
+list-style-type: none;
+
+}
+#navStyle2{
+
+margin:0;
+padding:0;
+width: 10%;
+list-style-type: none;
+}
+#navImage{
+  height: 100%;
+  width: 100%;
+  padding-top: 10%; 
+  padding-bottom: 10%;  
+  
+}
+/* nav stops here */
+
+
+#HowToPlayBtn{
+  border-color:#dbaa40;
+  border-width: 6px;
+  border-style: double;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+#HowToPlayBtn:hover{
+background-color:#dbaa40;
+color:black;
+border-color: black;
+}
+/* #HowToPlayBtn{
+  text-decoration: none;
+  color: black;
+  background-color: #dbaa40;
+  font-family: sans-serif;
+  font-size: 40px;
+  border:3px solid #ffffff;
+  padding: 40px 80px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+#HowToPlayBtn:hover{
+  background-color: #bb8a1f;
+}
+#HowToPlayBtn:before{
+  background-color:#ffffff;
+  top:0;
+left:0;
+width: 100%;
+height: 50px;
+position: absolute;
+transform: translateX(-100%) rotate(45deg);
+transition: all 0.3s;
+}
+#HowToPlayBtn:hover:before{
+  transform: translateX(100%) rotate(45deg);
+} */
+
+
 body {
   margin: 0;
-  background: #72c0c3;
   user-select: none;
-  cursor: pointer;
   background-image: url("./images/background.png");
   background-size: 100px;
   height: 100%;
@@ -23,22 +253,17 @@ body {
   align-items: center;
   justify-items: center;
   justify-content: center; 
-  /* background-image: url("./images/slotMachine.png"); */
-  height: 1250px;
-  background: url("./images/slotsMachine.png") no-repeat center;
+  height: 1100px;
+  /* background: url("./images/slotsMachine.png") no-repeat center; */
+  background: url("./images/slotMachineTrial.png") no-repeat center;
   background-size: 800px;
-}
-.title {
-  font-family: "Fredoka One", cursive;
-  font-size: 3rem;
-  color: lighten(#edfaf9 10%);
-  text-decoration: underline;
+  padding-top: 25px;
 }
 .money-container {
   position: relative;
   margin-bottom: 0.5rem;
   font-family: "Roboto", sans-serif;
-  color: lighten(#edfaf9 10%);
+  /* color: lighten(#edfaf9 10%); */
 }
 .changes {
   position: absolute;
@@ -47,7 +272,7 @@ body {
   font-weight: bold;
 }
 .change {
-  color: #044600;
+  color: white;
   padding-left: 0.5rem;
   animation-duration: 1s;
   animation-name: slideinLeft;
@@ -56,9 +281,8 @@ body {
 #money {
   font-size: 2rem;
   display: inline;
-  margin-left: -8rem;
   font-weight: bold;
-  border: solid black 5px;
+  border: solid #dbaa40 5px;
   background-color: white;
   padding-left: 5px;
   padding-right: 5px;
@@ -72,15 +296,17 @@ body {
   min-height: 12.5rem; 
   /* min-height: 15rem; box size */
   min-width: 15rem; 
-  border: solid #dbaa40 5px;
+  border: solid #dbaa40 15px;
   background-color: white;
+  margin-top: 39px;
 }
 .reel-container {
   user-select: none;
   display: flex;
   justify-content: center;
   flex-direction: column ;
-  height: 12.5rem; 
+  padding-top: 10px;
+  height: 12.6rem; 
   overflow: hidden;
   align-items: center;
   width: 8rem; /*4rem  witdth of each reel*/
@@ -97,34 +323,46 @@ body {
   
 }
 .info {
-  padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-top: 0;
+  padding-bottom:0;
   
 }
  
   .allInstructions {
     color: lighten(#edfaf9 10%);
     margin-bottom: 1rem;
-    width: 300px;
+    width: 400px;
     text-align: center;
-    font-family: "Fredoka One", cursive;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15%;
+    padding-bottom: 20px;
     margin-left: 15px;
     color:white;
     position: absolute;
   } 
 .instructions {
   width: 100%;
-  padding: 50px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
+  
 }
 #userChips{
   position: sticky;
   top: 0px;
-  color:beige;
-  font-size: 20pt;
-  text-align: right;
+  font-size: 20px;
+  /* text-align: left; */
+  border-width: 6px;
+  border-style: double;
+  border-color: #dbaa40;
+  background-color: rgba(0, 0, 0, 0.295);
+  width: 25%;
+  font-weight: bold;
+  color:white;
+  margin-left:75%;
+
 }
 *, *::after, *::before{
   box-sizing: border-box;
@@ -182,278 +420,6 @@ body {
   opacity: 1;
   pointer-events: all;
 }
-/* aimated arm
-#arm {
-    BASE 
-    position: relative;
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-    width: 60px;
-    height: 80px;
-    border-radius: 10% / 50%;
-    background-color: #666;
-    @include twoLinearGradients((left, hsla(0,0%,0%,.3) 0%, hsla(0,0%,0%,0) 15%, hsla(0,0%,100%,0) 50%, hsla(0,0%,0%,0) 85%, hsla(0,0%,0%,.3)),(top, #333 0%, #666 10%, #999 30%, hsla(0,0%,100%,.8) 60%, #999 70%, #666 90%, #333 100%));
-    &:before {
-         POLE 
-        content: '';
-        position: absolute;
-        top: -40px;
-        left: 16px;
-        width: 16px;
-        height: 70px;
-        border-radius: 8px;
-        box-shadow: 0px 2px 0px #333;
-        background-color: #999;
-        @include rotate(-10deg);
-        @include linearGradient(left, #666 0%, hsla(0,0%,100%,.7) 50%, #666 100%);
-        background-image: linear-gradient(to right, #666 0%, hsla(0,0%,100%,.7) 50%, #666 100%);
-        @include transition($duration:.5s);
-    }
-    &:after {
-         BALL 
-        content: '';
-        position: absolute;
-        top: -70px;
-        left: -4px;
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        background-color: $red;
-        border: 2px solid darken($red, 5%);
-        @include boxSizing;
-        @include radialGradient(50% 40%, closest-corner, hsla(0,0,100%,.5), hsla(0,0%,100%,0));
-        @include transition($duration:.5s);
-    }
+#dealerImage{
+  width: 100px;
 }
-#arm.clicked {
-    &:before {
-        top: -20px;
-        left: 20px;
-        @include transform(rotate3d(100,10,0,180deg));
-        @include origin(0% 100%);
-        @include transition($duration:.5s);
-    }
-    &:after {
-        top: 90px;
-        @include transition($duration:.5s);
-    }
-} */
-  
-/* 
-$borderCol: #1e1e1e;
-$light2: #b3d5eb;
-$light1: #edfaf9;
-$med: #72c0c3;
-$textCol: lighten(#edfaf9 10%);
-body {
-  margin: 0;
-  background: #72c0c3;
-  user-select: none;
-  cursor: pointer;
-}
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-  .title {
-    font-family: "Fredoka One", cursive;
-    font-size: 3rem;
-    color: lighten(#edfaf9 10%);
-    text-decoration: underline;
-  }
-  .money-container {
-    position: relative;
-    margin-bottom: 0.5rem;
-    font-family: "Roboto", sans-serif;
-    color: lighten(#edfaf9 10%);
-    .changes {
-      position: absolute;
-      display: inline-flex;
-      top: 1rem;
-      font-weight: bold;
-      .change {
-        color: #044600;
-        padding-left: 0.5rem;
-        animation-duration: 1s;
-        animation-name: slideinLeft;
-        animation-fill-mode: forwards;
-        &.negative {
-          color: #860000;
-        }
-        @for $i from 1 through 8 {
-          &:nth-child(#{$i}) {
-            opacity: 1 - ($i*0.15);
-          }
-        }
-      }
-    }
-    #money {
-      font-size: 2rem;
-      display: inline;
-      margin-left: -8rem;
-      font-weight: bold;
-      &:before {
-        content: "💰 ";
-      }
-    }
-  }
-  .play-area {
-    position: relative;
-    display: flex;
-    background-image: linear-gradient(
-      45deg,
-      $light1 18.75%,
-      $light2 18.75%,
-      $light2 50%,
-      $light1 50%,
-      $light1 68.75%,
-      $light2 68.75%,
-      $light2 100%
-    );
-    background-size: 56.57px 56.57px;
-    min-height: 12.5rem;
-    border: solid $borderCol 5px;
-    .reel-container {
-      user-select: none;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      height: 12.5rem;
-      overflow: hidden;
-      align-items: center;
-      width: 4rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      &:first-child {
-        border-right: solid $borderCol 3px;
-      }
-      &:last-child {
-        border-left: solid $borderCol 3px;
-      }
-      .reel-item {
-        font-size: 3rem;
-        animation-duration: 0.1s;
-        animation-name: slidein;
-        &.deactivate {
-          animation-duration: 0.1s;
-          animation-name: slideOut;
-          animation-fill-mode: forwards;
-        }
-        &.win {
-          animation: winFlashReels 1s infinite;
-          border-radius: 50%;
-        }
-      }
-    }
-    &:before {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 0;
-      top: calc(50% - 8px);
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 15px solid $borderCol;
-    }
-    &:after {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 0;
-      right: 0;
-      top: calc(50% - 8px);
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-right: 15px solid $borderCol;
-    }
-  }
-  .info {
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-    .instructions {
-      color: $textCol;
-      margin-bottom: 1rem;
-      width: 500px;
-      text-align: center;
-      font-family: "Fredoka One", cursive;
-    }
-    .prize-table {
-      width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-      justify-content: space-between;
-      color: $textCol;
-      font-weight: bold;
-      font-family: "Roboto", sans-serif;
-      font-size: 1.3rem;
-      .doubles {
-        padding-right: 2rem;
-      }
-      .prize-item {
-        opacity: 0.4;
-        margin-bottom: 0.2rem;
-        &.active {
-          opacity: 1;
-          animation: winFlashPrizeTable 1s infinite;
-        }
-      }
-    }
-  }
-}
-@keyframes slidein {
-  from {
-    font-size: 0.1rem;
-    opacity: 0;
-  }
-  to {
-    font-size: 3rem;
-    opacity: 1;
-  }
-}
-@keyframes slideOut {
-  to {
-    height: 0;
-    font-size: 0.1rem;
-    opacity: 0;
-  }
-  from {
-    height: 3rem;
-    font-size: 3rem;
-    opacity: 1;
-  }
-}
-@keyframes winFlashReels {
-  0% {
-    background-color: rgba(240, 240, 240, 0.2);
-  }
-  50% {
-    background-color: rgba(20, 200, 20, 1);
-  }
-  100% {
-    background-color: rgba(240, 240, 240, 0.2);
-  }
-}
-@keyframes winFlashPrizeTable {
-  0% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.2;
-  }
-}
-@keyframes slideinLeft {
-  to {
-    font-size: 1rem;
-  }
-  from {
-    font-size: 0rem;
-  }
-} */
