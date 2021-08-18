@@ -1,10 +1,10 @@
 import * as API from "../utilities/api-actions";
 import {displayLoginForm,setupLoginForm} from "./login";
 import {displaySignupForm,setupSignupForm} from "./signup";
+import {displayUpdateForm, setupUpdateForm} from "./update";
 import {getCookie, setCookie, deleteCookie} from "../utilities/cookie";
 import {IsNotEmpty} from "../utilities/conditional";
 
-import {displayUpdateForm, setupUpdateForm} from "./update";
 let accountId;
 
 export function createAccountDiv() {
@@ -23,7 +23,6 @@ export function populateAccountDiv() {
     {
         API.getAccount(accountId, data => {
             if(data.chipCount <= 0) {
-                console.log(data.chipCount)
                 accountDiv.innerHTML =`
                     <span id="account-username">${data.userName}</span>
                     <span id="account-no-chips">Out of Chips!</span>
@@ -35,7 +34,7 @@ export function populateAccountDiv() {
                 const addChipsButton = document.getElementById("add-chips");
 
                 addChipsButton.addEventListener("click", () => {
-                    API.SetChipCount(100);
+                    API.setChipCount(100);
                     accountDiv.innerHTML =`
                     <span id="account-username">${data.userName}</span>
                     <span id="account-chips">100</span>

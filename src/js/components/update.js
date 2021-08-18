@@ -1,5 +1,5 @@
 import { getCookie } from "../utilities/cookie";
-import {UpdateStuff} from "../utilities/api-actions";
+import {updateStuff} from "../utilities/api-actions";
 
 export function displayUpdateForm() {
     let userEmail = getCookie("UserEmail")
@@ -36,6 +36,5 @@ export function updateAccount_Submit() {
         Email: UpdateAccount_Email.value,
         Password: UpdateAccount_Password.value,
     };
-
-    UpdateStuff(RequestBody);
+    updateStuff(RequestBody);
 }

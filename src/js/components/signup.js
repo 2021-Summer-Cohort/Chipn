@@ -36,8 +36,7 @@ export function setupSignupForm() {
     });
 }
 
-export function signupAccountSubmit() {
-    
+export function signupAccountSubmit() {    
     const SignupAccount_UserName=document.getElementById("SignupAccount_UserName");
     const SignupAccount_Email=document.getElementById("SignupAccount_Email");
     const SignupAccount_Age=document.getElementById("SignupAccount_Age");

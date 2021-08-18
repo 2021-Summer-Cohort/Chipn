@@ -15,20 +15,19 @@ body {
     grid-column-start: 4;
     grid-column-end: 5;
     text-align: center;
-    vertical-align: middle;
     margin: auto;
 }
 #dealer-cards {
     grid-row-start: 1;
     grid-row-end: 3;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 6;
 }
 #seat4-cards { /* Player's seat */
     grid-row-start: 4;
     grid-row-end: 6;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 6;
 }
 #seat1-cards {
     grid-row-start: 2;
@@ -78,4 +77,53 @@ body {
 }
 .other-player .card {
     width: 75px;
+}
+#seat4-bet { /* Player's bet */
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+#seat1-bet {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 7;
+    grid-column-end: 8;
+}
+#seat2-bet {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+#seat3-bet {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+#seat5-bet {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+#seat6-bet {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+#seat7-bet {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.bet {
+    border: 2px solid black;
+    display: inline;
+    text-align: center;
+    color: white;
+    font-variant: small-caps;
 }
