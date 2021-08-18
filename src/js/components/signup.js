@@ -4,6 +4,7 @@ import {displayWelcome} from "./welcome";
 
 export function displaySignupForm() {
     const signupForm = `
+    <div class="form-21">
         <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
         <p class='text-danger' id='login-response'>Please sign up to enter the casino.</p>
         <label for="SignupAccount_UserName">User Name: </label>

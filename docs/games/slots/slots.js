@@ -42,8 +42,16 @@ let reelDelay = 100; //100
 
 // reelContents[0] = new Image();
 // reelContents[0].src = "/css/images/DonutRainbow.png"
+let accountId= _getCookie("UserId") ;
+// let money = 100;
+let money;
+ _getAccount(accountId, (data) =>
+{
+money = data.chipCount;
+document.querySelector("#money").innerText = data.chipCount;
+document.querySelector("#slotsUser").innerText = "User: " + data.userName;
+});
 
-let money = 100;
 let moneyToAdd = 0;
 let cost =2;
 
@@ -134,6 +142,7 @@ let moveReel = reelIndex => {
 let updateMoney = change => {
   money += change;
   document.querySelector("#money").innerText = money;
+  _modifyChipCount(change);
 };
 
 let setChange = change => {
