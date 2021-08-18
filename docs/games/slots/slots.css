@@ -1,5 +1,5 @@
  /* nav bar starts here */
- #header{
+ /* #header{
 display: flex;
 align-items: center;
   justify-items: center;
@@ -53,7 +53,6 @@ border-color: #dbaa40;
 border-width: 10px;
 border-style:double;
 background-size: 90%;
-/* background-color:rgba(255, 255, 255, 0.144); */
 background-color:#dbaa4079;
 transition-property: background-image;
 transition-duration: 1s; 
@@ -108,7 +107,6 @@ background-image: url("images/homeNavLit.png");
   border-width: 10px;
   border-style:double;
   background-size: 100%;
-  /* background-color:#76000073; */
   background-color:#dbaa4079;
   transition-property: background-image;
   transition-duration: 1s;
@@ -141,26 +139,13 @@ border-style:double;
 
 hr{
   border-top: #dbaa40 solid 15px;
-  /* border-bottom: #8f6c20 solid 10px; */
   margin:0%;
   padding:0%;
   border-style:double
 
 } 
 
-#SlotsTitle{ 
-  width: 50%;
-  margin-left: auto; 
-  margin-right: auto;
-  display:block;
- 
-}
 
-
-#HowToPlayBtn{
-  margin-left: 5%;
-  margin-top: 2%;
-}
 #navStyle1{
 
 margin:0;
@@ -182,10 +167,21 @@ list-style-type: none;
   padding-top: 10%; 
   padding-bottom: 10%;  
   
-}
+} */
 /* nav stops here */
 
+#SlotsTitle{ 
+  width: 50%;
+  margin-left: auto; 
+  margin-right: auto;
+  display:block;
+ 
+}
 
+#HowToPlayBtn{
+  margin-left: 5%;
+  margin-top: 2%;
+}
 #HowToPlayBtn{
   border-color:#dbaa40;
   border-width: 6px;
