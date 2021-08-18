@@ -35,22 +35,17 @@ namespace Chipn.Controllers
                 user.Password = "";
                 return user;
 			}
+            
 		}
 
-        // GET: api/Account
+        // GET: api/Accounts
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
         {
-            List<Account> accounts = await _context.Accounts.ToListAsync();
-            foreach (Account account in accounts)
-            {
-                account.Password = "";
-                account.Email = "";
-            }
-            return accounts;
+            return await _context.Accounts.ToListAsync();
         }
 
-        // GET: api/Account/5
+        // GET: api/Accounts/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Account>> GetAccount(int id)
         {
@@ -60,11 +55,11 @@ namespace Chipn.Controllers
             {
                 return NotFound();
             }
-            account.Password = "";
+
             return account;
         }
 
-        // PUT: api/Account/5
+        // PUT: api/Accounts/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAccount(int id, [FromBody]Account account)
@@ -75,7 +70,7 @@ namespace Chipn.Controllers
             }
 
             _context.Entry(account).State = EntityState.Modified;
-            account.Password = EncryptPassword(account.Password);
+
             try
             {
                 await _context.SaveChangesAsync();
@@ -95,28 +90,19 @@ namespace Chipn.Controllers
             return NoContent();
         }
 
-        // POST: api/Account
+        // POST: api/Accounts
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Account>> PostAccount([FromBody]Account account)
         {
-            var user = await _context.Accounts.Where(a => a.UserName == account.UserName).FirstOrDefaultAsync();
-            if (user != null)
-            {
-                return UnprocessableEntity();
-            }
-            else
-            {
-                account.Password = EncryptPassword(account.Password);
-                _context.Accounts.Add(account);
-                await _context.SaveChangesAsync();
+            account.Password = EncryptPassword(account.Password);
+            _context.Accounts.Add(account);
+            await _context.SaveChangesAsync();
 
-                account.Password = "";
-                return CreatedAtAction("GetAccount", new { id = account.Id }, account);
-            }
+            return CreatedAtAction("GetAccount", new { id = account.Id }, account);
         }
 
-        // DELETE: api/Account/5
+        // DELETE: api/Accounts/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAccount(int id)
         {
