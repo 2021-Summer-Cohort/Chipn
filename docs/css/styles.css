@@ -181,7 +181,7 @@
 	text-align: center;
 	background-color: lightblue;
 	margin-bottom: 40px;
-	min-width: 1240px;
+	
 	
 	max-width: 2000px;
 	/*480 - header & footer*/
@@ -242,13 +242,17 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: rgba(170, 133, 57, 0.7);
+		background-color:  rgba(0, 0, 0, 0.575);
 		z-index: 9998;
 		color: #ffffcc; 
-		background-image: url("../images/image.png");
+		background-image: url("../images/Dealer.png");
+		background-size: 350px ;
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: right top ;
 		align-items: center;
+		height:200%;
+		
+
 }
 
 #account.welcome {
@@ -257,13 +261,59 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(170, 133, 57, 0.7);
+	background-color: rgba(0, 0, 0, 0.575);
 	z-index: 9998;
 	color: #ffffcc; 
-	background-image: url("../images/image.png");
+	background-image: url("../images/DealerWink.gif");
+	background-size: 350px ;
 	background-repeat: no-repeat;
-	align-items: center;
+	background-position: right top ;
+	align-items: right top ;
+	height:200%;
 }
 .phrase{
 	text-align: center;
+}
+.form-21{
+	text-align: left;
+	padding-left: 5%;
+	padding-top: 2%;
+	padding-bottom:5%;
+	margin-top:5% ;
+	margin-left: 5%;
+border-style: solid transparent;
+border-image: url("/images/border1.png") 30  19px round ;
+background-color: rgba(0, 0, 0, 0.575);
+max-width: 65%;
+}
+.login-signup{
+	text-align: left;
+	padding-left: 5%;
+	padding-top: 2%;
+	padding-bottom:5%;
+	margin-top:5% ;
+	margin-left: 5%;
+	border-style: solid transparent;
+border-image: url("/images/border1.png") 30%  19px round ;
+background-color: rgba(0, 0, 0, 0.575);
+max-width: 65%;
+}
+.welcome-message{
+	text-align: left;
+	padding-left: 5%;
+	padding-top: 2%;
+	padding-bottom:5%;
+	margin-top:5% ;
+	margin-left: 5%;
+	border-style: solid transparent;
+border-image: url("/images/border1.png") 30%  19px round ;
+background-color: rgba(0, 0, 0, 0.575);
+max-width: 65%;
+}
+#account button{
+	border-color: #dbaa40;
+	border-width: 6px;
+	background-color:#dbaa40;
+	font-weight: bold;
+	
 }

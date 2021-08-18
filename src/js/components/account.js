@@ -25,7 +25,7 @@ export function populateAccountDiv() {
             if(data.chipCount <= 0) {
                 accountDiv.innerHTML =`
                     <span id="account-username">${data.userName}</span>
-                    <span id="account-no-chips">Out of Chips!</span>
+                    <span id="account-no-chips"> You are out of Chips!</span>
                     <button id="add-chips">Add More Chips</button>
                     <button id="account-logout" class="account-button">Logout</button>
                     <button id="account-update" class="account-button">Update</button>
@@ -72,10 +72,12 @@ export function populateAccountDiv() {
     else {
         
         accountDiv.innerHTML = `
-            <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
+        <div class="login-signup">    
+        <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
             <p>Please sign up or log in to enter the casino.</p>
             <button id="account-signup">Sign Up</button>
             <button id="account-login">Log In</button>
+            </div>
         `;
         accountDiv.className = "logged-out";
 

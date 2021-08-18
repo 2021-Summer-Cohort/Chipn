@@ -4,7 +4,8 @@ import {displayWelcome} from "./welcome";
 
 export function displayLoginForm() {
     const loginForm = `
-        <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
+    <div class="form-21">    
+    <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
         <p class='text-danger' id='login-response'>Please log in to enter the casino.</p>
         <label for="LoginAccount_UserName">User Name: </label>
         <input type="text" id="LoginAccount_UserName" />
@@ -12,6 +13,7 @@ export function displayLoginForm() {
         <input type="password" id="LoginAccount_Password" />
         <button id="login-cancel">Cancel</button>
         <button id="login-submit">Submit</button>
+        </div> 
     `;
     return loginForm;
 }
