@@ -19,7 +19,7 @@ export function getAccount(accountId, callback)
 // ModifyChipCount(-30);  Adds
 // UpdateStuff({Email:"email@email",ChipCount:30});
 
-export function SetChipCount(NewChipCount) // Sets a static value to overwrite existing chip count
+export function setChipCount(NewChipCount) // Sets a static value to overwrite existing chip count
 {
    let accountId = getCookie("UserId");
    if(IsNotEmpty(accountId))
@@ -51,7 +51,7 @@ export function SetChipCount(NewChipCount) // Sets a static value to overwrite e
    }
 }
 
-export function ModifyChipCount(ChipsToChange) // Can be positive or negative
+export function modifyChipCount(ChipsToChange) // Can be positive or negative
 {
    let accountId = getCookie("UserId");
    if(IsNotEmpty(accountId))
@@ -83,7 +83,7 @@ export function ModifyChipCount(ChipsToChange) // Can be positive or negative
    }
 }
 
-export function UpdateStuff(NewRequestBody)
+export function updateStuff(NewRequestBody)
 {
    let accountId = getCookie("UserId");
    if(IsNotEmpty(accountId))

@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Blackjack</title>
+        <!-- <link rel="stylesheet" href="../../css/styles.css"> -->
         <link rel="stylesheet" href="blackjack_styles.css">
     </head>
     <body>
@@ -12,20 +13,33 @@
             <div id="seat1-cards" class="seat other-player"></div>
             <div id="seat2-cards" class="seat other-player"></div>
             <div id="seat3-cards" class="seat other-player"></div>
-            <div id="seat4-cards" class="seat"></div>
             <div id="seat5-cards" class="seat other-player"></div>
             <div id="seat6-cards" class="seat other-player"></div>
             <div id="seat7-cards" class="seat other-player"></div>
+            <div id="seat4-cards" class="seat"></div>
+            
+            <!-- <div id="seat1-bet" class="bet other-player"></div>
+            <div id="seat2-bet" class="bet other-player"></div>
+            <div id="seat3-bet" class="bet other-player"></div> -->
+
+            <div id="seat4-bet" class="bet"></div>
+
+            <!-- <div id="seat5-bet" class="bet other-player"></div>
+            <div id="seat6-bet" class="bet other-player"></div>
+            <div id="seat7-bet" class="bet other-player"></div> -->
 
             <div id="buttons">
-                <button id="deal">Deal</button>
-                <!-- <button id="hit">Hit</button> -->
+                <button id="stay" disabled>Stay</button>
+                <button id="hit" disabled>Hit</button><br />
+                <button id="new-round">New Round</button>
             </div>
         </div>
 
         <footer id="site-footer"></footer>
 
-        <script src="/main.js"></script>
+        <script src="../../utilities/imports.js"></script>
+        <script src="../../../main.js"></script>
+        <!-- <script src="../../../utilities/cookie.js"></script> -->
         <script src="../../utilities/cards/deck.js"></script>
         <script src="blackjack_js.js"></script>
     </body>

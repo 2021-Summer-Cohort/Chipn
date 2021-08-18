@@ -36,7 +36,6 @@ export function loginAccountSubmit() {
         UserName:LoginAccount_UserName.value,
         Password:LoginAccount_Password.value
     };
-
     fetch(loginURL,{
         method:"POST",
         headers:{
