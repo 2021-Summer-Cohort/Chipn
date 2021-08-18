@@ -12,9 +12,57 @@
 </head>
 
 <body>
-    <header id="header">
-        <h1 class="head"></h1>
-    </header>
+    <hr>
+    <div id="header">
+
+        <ul id="navStyle1">
+            <li>
+                <img id = "navImage" src="./images/navArt.png"/>
+            </li>
+        </ul>
+        
+        <ul id="navbar1">
+
+            <li id="homeNav">
+                <button onclick=" location.href='../craps/craps.html'" id="homeNavImage"> </button> 
+            </li> 
+            <li id="aboutNav">
+                <button onclick=" location.href='../craps/craps.html'" id="aboutNavImage"> </button> 
+            </li> 
+            <li>
+                <img id="navStyleImage" src="images/navStyle2.png"/> 
+            </li>
+           
+        </ul>
+       
+        <ul id="navbar2">
+            <li>
+                <img id = "logo" src="./images/navLogo.png" />
+            </li>
+            <li id="blackjackNav">
+                <button onclick=" location.href='../blackjack/blackjack.html'" id="blackjackNavImage"> </button> 
+            </li>
+        </ul>
+        
+        <ul id="navbar3">
+            <li id="crapsNav">
+                <button onclick=" location.href='../craps/craps.html'" id="crapsNavImage"> </button> 
+            </li>
+            
+            <li id="slotsNav">
+                <button onclick=" location.href='../slots/slots.html'" id="slotsNavImage"> </button> 
+            </li>
+            <li>
+                <img id="navStyleImage" src="images/navStyle.png"/> 
+            </li>
+        </ul>
+        <ul id="navStyle2">
+            <li>
+                <img id = "navImage" src="./images/navArt.png" />
+            </li>
+        </ul>
+    </div>
+    <hr>
     <!-- <div id="arm"></div> -->
 
 
@@ -31,17 +79,26 @@
     <div id="overlay"></div> -->
 
 
-
-
-    <div id="slotMachine"></div>
+    
+<img id ="SlotsTitle" src="images/slotsSign.gif">
+<hr>
+<div id="userChips">
+    <p>User: </p>
+    <p>Chips: </p>
+    <div class="money-container">
+        <div id="money">100</div>
+        <div class="changes"> </div> 
+    </div>
+</div>
+<div id="slotMachine"></div>
 
 
 
     <div class="info">
-        <button onclick="toggleInstructions()">How to Play</button>
+        <button id="HowToPlayBtn" onclick="toggleInstructions()">How to Play</button>
         <div class="allInstructions">
             <div class="instructions">
-                Press anywhere to spin the reels.<br /> Each spin costs 2 💰<br /> Match at least two on the middle row
+                Press anywhere to spin the reels.<br /> Each spin costs 2 chips<br /> Match at least two on the middle row
                 to win!<br /> See prizes below.
             </div>
 
@@ -50,92 +107,25 @@
                 <div class="doubles">
                 </div>
                 <div class="triples">
-
                 </div>
+                <div id="dealer"><img id="dealerImage"src="./images/dealer2.png"/></div>
             </div>
         </div>
     </div>
     
-    <div id="userChips">hell</div>
+    <!-- <div id="userChips">hell</div> -->
 
     <div class="container" onclick="startSpin()">
-        <h1 class="title"> </h1>
-        <div class="money-container">
-            <div id="money">100</div>
-            <div class="changes"> </div>
-        </div>
-
-        <div class="play-area">
-            <div class="reel-container"></div>
-            <div class="reel-container"></div>
-            <div class="reel-container"></div>
-        </div>
-    </div>
-
-    
-
-
-
-
-
-
-    <!-- <div id="slotMachine"></div>
-   
-    
-
-    <div class="info">
-        <button onclick="toggleInstructions()">How to Play</button>
-        <div class="allInstructions">
-        <div class="instructions">
-            Press anywhere to spin the reels.<br /> Each spin costs 2 💰<br /> Match at least two on the middle row
-            to win!<br /> See prizes below.
-        </div>
         
-        <div class="prize-table">
-            <div class="doubles">
-            </div>
-            <div class="triples">
-
-            </div>
+        <div class="play-area">
+             
+            <div class="reel-container"></div>
+            <div class="reel-container"></div>
+            <div class="reel-container"></div>
         </div>
     </div>
 
-    <div class="container" onclick="startSpin()">
-        <h1 class="title"> </h1>
-        <div class="money-container">
-            <div id="money">100</div>
-            <div class="changes"> </div>
-        </div> 
 
-        <div class="play-area">
-            <div class="reel-container"></div>
-            <div class="reel-container"></div>
-            <div class="reel-container"></div>
-        </div>
-    </div> -->
-
-
-
-
-
-
-
-    <!-- <div class="info">
-            <button onclick="toggleInstructions()">How to Play</button>
-            <div class="allInstructions">
-            <div class="instructions">
-                Press anywhere to spin the reels.<br /> Each spin costs 1 💰<br /> Match at least two on the middle row
-                to win!<br /> See prizes below.
-            </div>
-            
-            <div class="prize-table">
-                <div class="doubles">
-                </div>
-                <div class="triples">
-
-                </div>
-            </div>
-        </div> -->
 
     </main>
     </div>
