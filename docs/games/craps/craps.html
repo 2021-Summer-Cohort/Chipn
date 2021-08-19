@@ -16,15 +16,15 @@
 </head>
 
 <body>
-  <header id="site-header"></header>
+  <header id="site-header"></header><div id="BackgroundImage_Craps">
 
   <!--https://codepen.io/westleyc30/pen/AXkrrY-->
 
   <audio id="diceAudio">
     <source src='../../sounds/dicethrow.wav' type="audio/wav">
-</audio>
+  </audio>
 
-  <header>
+  <header id="CrapsHeader">
     <nav>
       <ul>
         <li><h1>Oh, Craps!</h1></li>
@@ -65,50 +65,7 @@
       </div>
     </div>
 
-    <div id="id02" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
-          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-          <div>
-            How Much would you like to bet? <input id="bet-amt" type="number" min="5" max="100" />
-            <button id="place-bet">Place Bet</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- <div class="modal" id="myModal">
-
-      <header class="modal-header">
-        <h3>Rules</h3>
-      </header>
-      <content class="modal-content">
-        <ol>
-          <li>Game starts with a 'Come Out Roll'</li>
-          <ul>
-            <li>If you roll a 7 or 11 you win</li>
-            <li>If you roll a 2, 3 or 12 you lose</li>
-            <li>Roll anything else and it becomes 'The Point'</li>
-          </ul>
-          <li>'The Point Roll'</li>
-          <ul>
-            <li>If you roll 'The Point' you win</li>
-            <li>If you roll a 7 you lose</li>
-            <li>Roll anything else and you roll again</li>
-          </ul>
-        </ol>
-      </content>
-    </div> END MODAL HEADER -->
-
-    <!-- <main id="button-main">
-      
-      <nav>
-        <ul>
-          <li id='btn-rules'>rules</li>
-          <li id='btn-bets'>bets</li>
-        </ul>
-      </nav>
-    </main> -->
+    
 
 
 
@@ -128,7 +85,18 @@
 
     <div class="dice-board">
 
-
+      <div id="id02" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <div>
+              How Much would you like to bet? <input id="bet-amt" type="number" min="5" max="100" />
+              <button id="place-bet">Place Bet</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
       <div class="container-dice">
 
 
@@ -218,7 +186,7 @@
     </div>
   </div> <!-- END dice-board -->
 
-  <footer id="site-footer"></footer>
+  </div><footer id="site-footer"></footer>
 
   <script src="/utilities/imports.js"></script>
   <script src="/main.js"></script>

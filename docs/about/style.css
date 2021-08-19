@@ -53,3 +53,17 @@
   .button:hover {
     background-color: #555;
   }
+
+  p{
+    color:white;
+  }
+  h2{
+    color:yellow;
+  }
+
+  body {
+    margin: 0;
+    background-image: url("/images/wallpaper.png");
+    background-size: 50px;
+    background-repeat: repeat;
+  }

@@ -22,7 +22,7 @@ export function populateAccountDiv() {
     {
         let leaderBoard = document.createElement("div");
         leaderBoard.id = "leader-board";
-        leaderBoard.innerText = "Leader board testing";
+        leaderBoard.innerText = /*"Leader board testing"*/"";
         accountDiv.appendChild(leaderBoard);
 
         let userChipsContainer = document.createElement("div");

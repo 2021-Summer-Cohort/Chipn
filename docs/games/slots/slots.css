@@ -68,8 +68,6 @@ body {
   justify-items: center;
   justify-content: center; 
   width: 100%;
-  
-  
 }
 .container {
   width: 100%;
@@ -247,4 +245,14 @@ body {
 }
 #dealerImage{
   width: 100px;
+}
+#navBox{
+  width:100%;
+}
+hr {
+	border-top: #dbaa40 solid 15px;
+	/* border-bottom: #8f6c20 solid 10px; */
+	margin: 0;
+	padding: 0;
+	border-style: double;
 }

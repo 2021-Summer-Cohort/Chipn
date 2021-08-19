@@ -1,213 +1,180 @@
-html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
+/*html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
   
-  *, *:before, *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
-    padding: 0;
-    margin-left: 20; }
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  padding: 0;
+  margin-left: 0; }*/
   
-  body {
-    background-image: url("./images/crapsTableLogo.png"), url("./images/floorTile.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat, repeat;
-    background-position: center, right;
-    background-size: contain, 120px;
-    perspective: 1000px;
-    color: #ffffcc; 
-  } 
-    
-  #pointRollButton {
-    display: none; }
+body {
+  background-image: url("/images/wallpaperGrey.png");
+  background-repeat: repeat;
+  background-position: right;
+  background-size: 120px;
+  perspective: 1000px;
+  color: #ffffcc; 
+} 
+#BackgroundImage_Craps{
+  background-image: url("./images/crapsTableLogo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
+  /*background-attachment: fixed;*/
+  min-height:500px;
+}  
+#pointRollButton {
+  display: none; }
   
-  #winOrLoss {
-    text-align: center; }
-  #theRoll{
-    margin-left: 50px;
-  }  
-  #crapWins, #crapLosses{
-    margin-left: 70px;
-  }
+#winOrLoss {
+  text-align: center; }
+#theRoll{
+  margin-left: 50px;
+}  
+#crapWins, #crapLosses{
+  margin-left: 70px;
+}
   
-  /* MODAL THINGS*/
-  .modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(170, 133, 57, 0.7);
-    z-index: 9998;
-    color: #ffffcc; }
-  
-  .modal-overlay,
-  .modal {
-    visibility:hidden;
-    opacity: 0; }
-  
-  /* HEADER */
-  /* header {
-    position: absolute;
-    text-align: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px; }
-    header h1 {
-      font-family: 'Lobster', cursive;
-      font-size: 72px;
-      background: -webkit-linear-gradient(rgb(238, 61, 61), rgb(209, 192, 40));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color:red;
-      -webkit-text-stroke-width: .05px;
-      -webkit-text-stroke-color: rgb(247, 241, 241);
-      text-shadow: 4px 4px #2e2626;
-      float: left; 
-      margin: 0;
-    } */
-        
-  
-  /* nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; }
-  
-  nav li {
-    float: right;
-    margin: 15px;
-    padding: 10px 50px;
-    background: #aa4f39;
-    border-radius: 8px;
-    box-shadow: 0 3px #999;
-    transition: .3s;
-    text-transform: uppercase; } */
-  
-  .btnstuff:hover {
-    background: #999;
-    cursor: pointer;
-    margin-top: 16px;
-    padding: 11px 50px 9px 50px; }
+/* MODAL THINGS*/
+.modal-overlay {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(170, 133, 57, 0.7);
+  z-index: 9998;
+  color: #ffffcc; }
 
-    header h1 {
-      font-family: 'Lobster', cursive;
-      font-size: 72px;
-      background: -webkit-linear-gradient(rgb(238, 61, 61), rgb(209, 192, 40));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color:rgb(235, 18, 18);
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: rgb(247, 241, 241);
-      text-shadow: 5px 5px #2e2626;
-      float: left; 
-      margin: 0;
-      margin-left: 50px;
-    }
-    .w3-modal{
-      height:200%; /*200% for static with blackspace below, auto for no blackspace below but dynamic.*/
-    }
-    .w3-container{
-      background-color: cadetblue;
-      opacity:75%;
-      color: black;
-      height:auto;
-    }
-    #game-start{
-      font-family: 'Lobster', cursive;
-      font-size: 25px;
-    }
-    #modal-text{
-      margin-left: 10px;
-      list-style-type: none;
-    }
-    
-    nav{
-      margin: 0;
-      overflow: hidden;
-    }
+.modal-overlay,
+.modal {
+  visibility:hidden;
+  opacity: 0; }
 
-    nav ul {
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
+.btnstuff:hover {
+  background: #999;
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 11px 50px 9px 50px; }
 
-    nav ul li{
-      display: inline-block;
-      list-style-type: none;    
-    }
+header h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(238, 61, 61), rgb(209, 192, 40));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color:rgb(235, 18, 18);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(247, 241, 241);
+  text-shadow: 5px 5px #2e2626;
+  float: left; 
+  margin: 0;
+  margin-left: 50px;
+}
+.w3-modal{
+  height:200%; /*200% for static with blackspace below, auto for no blackspace below but dynamic.*/
+}
+.w3-container{
+  background-color: cadetblue;
+  opacity:75%;
+  color: black;
+  height:auto;
+  margin-top:325px;
+}
+#game-start{
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+}
+#modal-text{
+  margin-left: 10px;
+  list-style-type: none;
+}
+#CrapsHeader nav{
+  margin: 0;
+  overflow: hidden;
+}
+#CrapsHeader nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+#CrapsHeader nav ul li{
+  display: inline-block;
+  list-style-type: none;    
+}
+#CrapsHeader nav ul li#btn-bets, li#btn-rules{
+  max-height: 45px;
+  margin: 15px;
+  padding: 10px 50px;
+  background: #aa4f39;
+  border-radius: 8px;
+  box-shadow: 0 3px #999;
+  transition: .3s;
+  text-transform: uppercase;
+}
+#CrapsHeader nav ul li:first-child {
+  margin-right: auto;
+}
+#navBox{
+  width:100%;
+}
 
-    nav ul li#btn-bets, li#btn-rules{
-      max-height: 45px;
-      margin: 15px;
-      padding: 10px 50px;
-      background: #aa4f39;
-      border-radius: 8px;
-      box-shadow: 0 3px #999;
-      transition: .3s;
-      text-transform: uppercase;
-    }
+/* BUTTONS */
+main, .roll-button {
+  display: block;
+  margin-bottom: 10px;
+  margin: 15px auto; }
 
-    nav ul li:first-child {
-      margin-right: auto;
-    }
-    
-
-  /* BUTTONS */
-  main, .roll-button {
-    display: block;
-    margin-bottom: 10px;
-    margin: 15px auto; }
+#the-game button {
+  padding: 10px 50px;
+  color: #ffffcc;
+  background: #AA4F39;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #802915;
+  outline: none;
+  transition: .3s; }
   
-  button {
-    padding: 10px 50px;
-    color: #ffffcc;
-    background: #AA4F39;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 3px #802915;
-    outline: none;
-    transition: .3s; }
+#the-game button:hover, #the-game button:active {
+  outline: none;
+  background: #802915;
+  cursor: pointer;
+  padding: 10px 50px 10px 50px;
+  margin-top: 0px;}
   
-  button:hover, button:active {
-    outline: none;
-    background: #802915;
-    cursor: pointer;
-    padding: 11px 50px 9px 50px;
-    margin-top: 15px; }
-  
-  .dice-board {
-    text-align: center;
-    width: 100%;
-    height: 50%; }
+.dice-board {
+  text-align: center;
+  width: 100%;
+  height: 50%; }
   
   /*########## DICE THINGS ###########*/
-  .container-dice {
-    display:inline-block;
-    margin-top: 55px;
-    width: 300px;
-    margin: 50px auto 0 auto; }
+.container-dice {
+  display:inline-block;
+  margin-top: 55px;
+  width: 300px;
+  margin: 50px auto 0 auto; }
   
-  .dice {
-    position:absolute;
-    width: 100px;
-    height: 100px;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    /* text-align: center; */
-  }
+.dice {
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  /* text-align: center; */
+}
   
-  .divot {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    margin: -20px 0 0 -20px;
-    border-radius: 20px;
-    background: rgb(241, 238, 238);
-    border-style: groove;
-    border-color: #999;
-   }
+.divot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: -20px 0 0 -20px;
+  border-radius: 20px;
+  background: rgb(241, 238, 238);
+  border-style: groove;
+  border-color: #999;
+}
   
   .dice-one {
     margin-left: 100px; }
