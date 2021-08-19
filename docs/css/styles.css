@@ -1,8 +1,8 @@
 body {
 	margin: 0;
-	background-image: url("/images/wallpaper.png");
+	/*background-image: url("/images/wallpaper.png");
 	background-size: 50px;
-	background-repeat: repeat;
+	background-repeat: repeat;*/
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -163,10 +163,8 @@ body {
 	margin: 0;
 	padding: 0;
 	border-style: double;
-} 
+}
 /* END NAV BAR STYLES*/
-
-
 
 /* BEGIN HOME PAGE AND VIDEO STYLES */
 main {
@@ -292,44 +290,38 @@ h3.home-phrase{
 #leader-board {
 	background-color: blue;
 }
-#user-chips-container {
-	/* background-color: orange; */
-	display: flex;
-	height: 900%;
-	position: absolute;
-	right: 0;
-	z-index: -1;
-}
-#user-chips {
-	background-color: green;
-	position: sticky;
-	top: 0;
-	align-self: flex-start;
-	z-index: 100;
-}
 
-/* #account.logged-in {
-	position: sticky;
+#user-chips {
+	background-color: rgba(0, 0, 0, 0.555);
+	color:#dbaa40;
+}
+.login-signup
+{
+	position: absolute;
 	top: 0;
-} */
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height:20%;
+}
 
 #account.logged-out {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color:  rgba(0, 0, 0, 0.575);
-		z-index: 9998;
-		color: #ffffcc; 
-		background-image: url("../images/Dealer.png");
-		background-size: 350px ;
-		background-repeat: no-repeat;
-		background-position: right top ;
-		align-items: center;
-		height:200%;
-		
-
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:  rgba(0, 0, 0, 0.575);
+	z-index: 9998;
+	color: #ffffcc; 
+	background-image: url("../images/Dealer.png")/*, linear-gradient(to bottom, rgba(255,255,255,0) 20%,
+	rgba(255,255,255,1))*/
+;
+	background-size: 350px ;
+	background-repeat: no-repeat;
+	background-position: right top ;
+	align-items: center;
+	height:294%;
 }
 
 #account.welcome {
@@ -349,29 +341,31 @@ h3.home-phrase{
 	height:200%;
 }
 
+#user-chips{
+	
+}
+
 .form-21{
 	text-align: left;
-	padding-left: 5%;
-	padding-top: 2%;
-	padding-bottom:5%;
+
 	margin-top:5% ;
 	margin-left: 5%;
-border-style: solid transparent;
-border-image: url("/images/border1.png") 30  19px round ;
-background-color: rgba(0, 0, 0, 0.575);
-max-width: 65%;
+	border-style: solid;
+	border-image: url("../images/borderSquare.png") 30% stretch;
+	border-width:100px;
+	background-color: rgba(0, 0, 0, 0.575);
+	max-width: 65%;
 }
 .login-signup{
 	text-align: left;
-	padding-left: 5%;
-	padding-top: 2%;
-	padding-bottom:5%;
+	height:375px;
 	margin-top:5% ;
 	margin-left: 5%;
-	border-style: solid transparent;
-border-image: url("/images/border1.png") 30%  19px round ;
-background-color: rgba(0, 0, 0, 0.575);
-max-width: 65%;
+	border-style: solid;
+	border-image: url("../images/borderSquare.png") 30% stretch;
+	border-width:100px;
+	background-color: rgba(0, 0, 0, 0.575);
+	max-width: 65%;
 }
 .welcome-message{
 	text-align: left;
@@ -381,16 +375,15 @@ max-width: 65%;
 	margin-top:5% ;
 	margin-left: 5%;
 	border-style: solid transparent;
-border-image: url("/images/border1.png") 30%  19px round ;
-background-color: rgba(0, 0, 0, 0.575);
-max-width: 65%;
+	border-image: url("/images/border1.png") 30%  19px round ;
+	background-color: rgba(0, 0, 0, 0.575);
+	max-width: 65%;
 }
 #account button{
 	border-color: #dbaa40;
 	border-width: 6px;
 	background-color:#dbaa40;
 	font-weight: bold;
-	
 }
 
 
