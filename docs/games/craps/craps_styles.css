@@ -24,7 +24,7 @@ body {
   background-position: center;
   background-size:contain;
   /*background-attachment: fixed;*/
-  min-height:500px;
+  min-height:650px;
 }  
 #pointRollButton {
   display: none; }
