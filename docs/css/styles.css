@@ -295,15 +295,6 @@ h3.home-phrase{
 	background-color: rgba(0, 0, 0, 0.555);
 	color:#dbaa40;
 }
-.login-signup
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height:20%;
-}
 
 #account.logged-out {
 	position: absolute;
@@ -346,40 +337,56 @@ h3.home-phrase{
 }
 
 .form-21{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	text-align: left;
-
+	height:175px;
 	margin-top:5% ;
 	margin-left: 5%;
 	border-style: solid;
 	border-image: url("../images/borderSquare.png") 30% stretch;
 	border-width:100px;
 	background-color: rgba(0, 0, 0, 0.575);
-	max-width: 65%;
+	max-width: 45%;
 }
 .login-signup{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	text-align: left;
-	height:375px;
+	height:175px;
 	margin-top:5% ;
 	margin-left: 5%;
 	border-style: solid;
 	border-image: url("../images/borderSquare.png") 30% stretch;
 	border-width:100px;
 	background-color: rgba(0, 0, 0, 0.575);
-	max-width: 65%;
+	max-width: 45%;
 }
 .welcome-message{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	text-align: left;
+	height:175px;
 	padding-left: 5%;
 	padding-top: 2%;
 	padding-bottom:5%;
 	margin-top:5% ;
 	margin-left: 5%;
 	border-style: solid transparent;
-	border-image: url("/images/border1.png") 30%  19px round ;
+	border-image: url("../images/borderSquare.png") 30% stretch ;
 	background-color: rgba(0, 0, 0, 0.575);
-	max-width: 65%;
+	max-width: 45%;
 }
-#account button{
+button{
 	border-color: #dbaa40;
 	border-width: 6px;
 	background-color:#dbaa40;

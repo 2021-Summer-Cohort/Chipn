@@ -4,10 +4,11 @@ body {
 }
 #table {
     display: grid;
-    grid-template-columns: 200px 200px 200px 300px 200px 200px 200px;
+    /* grid-template-columns: 100px 100px 100px 300px 100px 100px 100px; */
+    grid-template-columns: 10% 10% 10% 40% 10% 10% 10%;
     grid-template-rows: 80px 130px 130px 130px 80px;
     margin: 2rem auto;
-    width: 1500px;
+    width: 100%;
 }
 #buttons {
     grid-row-start: 3;
@@ -32,38 +33,38 @@ body {
 #seat1-cards {
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 7;
+    grid-column-start: 6;
     grid-column-end: 8;
 }
 #seat2-cards {
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 6;
-    grid-column-end: 7;
+    grid-column-start: 5;
+    grid-column-end: 8;
 }
 #seat3-cards {
     grid-row-start: 4;
     grid-row-end: 5;
     grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-end: 7;
 }
 #seat5-cards {
     grid-row-start: 4;
     grid-row-end: 5;
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end: 4;
 }
 #seat6-cards {
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 #seat7-cards {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
 }
 .seat {
     /* border: 2px solid black; */
@@ -87,38 +88,38 @@ body {
 #seat1-bet {
     grid-row-start: 1;
     grid-row-end: 2;
-    grid-column-start: 7;
+    grid-column-start: 6;
     grid-column-end: 8;
 }
 #seat2-bet {
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 6;
-    grid-column-end: 7;
+    grid-column-start: 5;
+    grid-column-end: 8;
 }
 #seat3-bet {
     grid-row-start: 3;
     grid-row-end: 4;
     grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-end: 7;
 }
 #seat5-bet {
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end: 4;
 }
 #seat6-bet {
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 #seat7-bet {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
 }
 .bet {
     border: 2px solid black;

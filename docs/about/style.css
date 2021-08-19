@@ -38,7 +38,7 @@
     color: grey;
   }
   
-  .button {
+  /* .button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -48,7 +48,7 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
-  }
+  } */
   
   .button:hover {
     background-color: #555;
@@ -58,7 +58,7 @@
     color:white;
   }
   h2{
-    color:yellow;
+    color:#dbaa40;
   }
 
   body {
