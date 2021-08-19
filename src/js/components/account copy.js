@@ -20,27 +20,9 @@ export function populateAccountDiv() {
 
     if(IsNotEmpty(accountId))
     {
-        let leaderBoard = document.createElement("div");
-        leaderBoard.id = "leader-board";
-        leaderBoard.innerText = "Leader board testing";
-        accountDiv.appendChild(leaderBoard);
-
-        let userChipsContainer = document.createElement("div");
-        userChipsContainer.id = "user-chips-container";
-        userChipsContainer.innerText = " ";
-        accountDiv.appendChild(userChipsContainer);
-        const userChipsContainerDiv = document.getElementById("user-chips-container");
-
-        let userChips = document.createElement("div");
-        userChips.id = "user-chips";
-        userChips.innerText = " ";
-        userChipsContainerDiv.appendChild(userChips);
-    
-        const userChipsDiv = document.getElementById("user-chips");
-
         API.getAccount(accountId, data => {
             if(data.chipCount <= 0) {
-                userChipsDiv.innerHTML =`
+                accountDiv.innerHTML =`
                     <span id="account-username">${data.userName}</span>
                     <span id="account-no-chips"> You are out of Chips!</span>
                     <button id="add-chips">Add More Chips</button>
@@ -52,7 +34,7 @@ export function populateAccountDiv() {
 
                 addChipsButton.addEventListener("click", () => {
                     API.setChipCount(100);
-                    userChipsDiv.innerHTML =`
+                    accountDiv.innerHTML =`
                     <span id="account-username">${data.userName}</span>
                     <span id="account-chips">100</span>
                     <button id="account-logout" class="account-button">Logout</button>
@@ -60,7 +42,7 @@ export function populateAccountDiv() {
                 `;
                 });
             } else {
-                userChipsDiv.innerHTML =`
+                accountDiv.innerHTML =`
                     <span id="account-username">${data.userName}</span>
                     <span id="account-chips">${data.chipCount}</span>
                     <button id="account-logout" class="account-button">Logout</button>

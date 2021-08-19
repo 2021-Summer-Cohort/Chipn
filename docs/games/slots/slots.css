@@ -58,7 +58,7 @@ transition: all 0.3s;
 body {
   margin: 0;
   user-select: none;
-  background-image: url("./images/background.png");
+  background-image: url("/images/wallpaper.png");
   background-size: 100px;
   height: 100%;
 }

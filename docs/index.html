@@ -1,37 +1,35 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Chip'n</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Chip'n - It's Lit!</title>
 </head>
-<!--<body class="hero" id="text_conty">-->
-<body>
-    <audio id="myAudio">
-        <source src='./sounds/lit.mp3' type="audio/mp3">
-    </audio>
-    <div class="content">
-        <video class="video" width=50 height=60 autoplay muted loop>
-            <source src="./videos/Add a heading (1).mp4" type="video/mp4">
-        </video>
-    </div>
-    <header id="site-header">
 
-    </header>
-    <div class="container">
-        <main>
-            <h1 class="phrase">Welcome to Chip'n</h1>
-            <h2 class="phrase">A Lit Ministries casino.</h2>
-            <h3 class="phrase"> Please choose a game to play. </h3>
-                    <h4 class="phrase">It's <span id="litty"><img src="./games/slots/images/Lit.png" width="35px"
-                            style="position:relative;top:3px" /></span></h4>
-        </main>
-    </div>
+<body>
+    <header id="site-header"></header>
+
+    <main>
+        <h1 class="home-phrase">Welcome to</h1>
+
+        <div class="video-container">
+            <video class="video" width=50 height=60 autoplay muted loop>
+                <source src="/videos/splash-video.mp4" type="video/mp4" />
+            </video>
+        </div>
+
+        <h1 class="home-phrase" id="video-substitute">Chip'n</h1>
+
+        <h2 class="home-phrase">a Lit Ministries casino</h2>
+        <h3 class="home-phrase"> Please choose a game to play.</h3>
+    </main>
+
     <footer id="site-footer"></footer>
+
     <script src="/utilities/imports.js"></script>
     <script src="/main.js"></script>
 </body>
-
 </html>
