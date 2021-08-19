@@ -1,0 +1,269 @@
+#navBox{
+	display: flex;
+	align-items: center;
+	  justify-items: center;
+	  justify-content: center; 
+	  width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+	background-color: rgba(0, 0, 0, 0.541);
+	}
+	
+	#navbar1{
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0;
+	  width: 22%;
+	  
+	} 
+	#navbar2 {
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0;
+	  
+	  width: 36%;
+	}
+	#navbar3{
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0;
+	  width:22%;
+	  
+	}
+	
+	#logo{
+	 
+	  padding-bottom: 0%;
+	  padding-top: 0%;
+	  
+	  margin-left: auto; 
+	  margin-right: auto;
+	  display:block; 
+	  width: 100%;
+	  
+	}
+	 #homeNavImage{
+	background-image: url("../images/homeNav.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100px;
+	width:100%;
+	border-color: #dbaa40;
+	border-width: 10px;
+	border-style:double;
+	background-size: 90%;
+	/* background-color:rgba(255, 255, 255, 0.144); */
+	background-color:#dbaa4079;
+	transition-property: background-image;
+	transition-duration: 1s; 
+	margin-left: auto; 
+	margin-right: auto;
+	display:block;
+	} 
+	#homeNavImage:hover{
+	background-image: url("../images/homeNavLit.png");
+	}
+	#aboutNavImage{
+	  background-image: url("../images/aboutNav.png");
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  height: 100px;
+	  width: 100%;
+	  border-color: #dbaa40;
+	  border-width: 10px;
+	  border-style:double;
+	  background-size: 100%;
+	  background-color:#dbaa4079;
+	  transition-property: background-image;
+	  transition-duration: 1s;
+	}
+	#aboutNavImage:hover{
+	  background-image: url("../images/aboutNavLit.png");
+	}
+	#crapsNavImage{
+	  background-image: url("../images/crapsNav.png");
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  height: 100px;
+	  width: 100%;
+	  border-color: #dbaa40;
+	  border-width: 10px;
+	  border-style:double;
+	  background-size: 100%;
+	  background-color:#dbaa4079;
+	  transition-property: background-image;
+	  transition-duration: 1s;
+	}
+	#crapsNavImage:hover{
+	  background-image: url("../images/crapsNavLit.png");
+	}
+	#blackjackNavImage{
+	  background-image: url("../images/blackjackNav.png");
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  height: 100px;
+	  width: 100%;
+	  border-color: #dbaa40;
+	  border-width: 10px;
+	  border-style:double;
+	  background-size: 100%;
+	  /* background-color:#76000073; */
+	  background-color:#dbaa4079;
+	  transition-property: background-image;
+	  transition-duration: 1s;
+	  
+	}
+	#blackjackNavImage:hover{
+	  background-image: url("../images/blackjackNavLit.png");
+	} 
+	#slotsNavImage{
+	  background-image: url("../images/slotsNav.png");
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  height: 100px;
+	  width: 100%;
+	  border-color: #dbaa40;
+	  border-width: 10px;
+	border-style:double;
+	  background-size: 100%;
+	  background-color:#dbaa4079;
+	  transition-property: background-image;
+	  transition-duration: 1s;
+	}
+	#slotsNavImage:hover{
+	  background-image: url("../images/slotsNavLit.png");
+	}
+	
+	#navStyleImage{
+	  width: 100%;
+	}
+	
+	hr{
+	  border-top: #dbaa40 solid 15px;
+	  /* border-bottom: #8f6c20 solid 10px; */
+	  margin:0%;
+	  padding:0%;
+	  border-style:double
+	
+	} 
+	#navStyle1{
+	
+	margin:0;
+	padding:0;
+	width: 10%;
+	list-style-type: none;
+	
+	}
+	#navStyle2{
+	
+	margin:0;
+	padding:0;
+	width: 10%;
+	list-style-type: none;
+	}
+	#navImage{
+	  height: 100%;
+	  width: 100%;
+	  padding-top: 10%; 
+	  padding-bottom: 10%;  
+	  
+	}
+	/* nav stops here */
+
+  .content {
+	background-image: url("../images/background.png");
+	background-size: 50px;
+	background-repeat: repeat;
+	position: relative;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	text-align: center;
+	background-color: lightblue;
+	margin-bottom: 40px;
+	min-width: 1240px;
+	
+	max-width: 2000px;
+	/*480 - header & footer*/
+  }
+  .video {
+	clip-path: inset(105px 185px 50px 100px);
+	height: 100% !important;
+	width: auto !important;
+	max-width: 100% !important;
+	margin-right: -130px;
+    margin-top: -90px;
+    margin-left: -50px;
+	margin-bottom: -40px;
+
+  }
+  
+
+
+
+/*https://coder-coder.com/background-image-opacity/#:~:text=There's%20no%20CSS%20property%20that,for%20the%20background%2Dimage%20property*/
+.hero {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {    
+      content: "";
+      background-image: url('./images/logoRed.png');
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.75;
+}
+
+#text_cont {
+  position: relative;
+  color: #ffffff;  
+  font-size: 14rem;
+  line-height: 0.9;
+  text-align: center;
+}
+
+
+#account.logged-in {
+	float: left;
+}
+
+#account.logged-out {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(170, 133, 57, 0.7);
+		z-index: 9998;
+		color: #ffffcc; 
+		background-image: url("/images/DealerWink.gif");
+		background-repeat: no-repeat;
+		background-position: center;
+		align-items: center;
+}
+
+#account.welcome {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(170, 133, 57, 0.7);
+	z-index: 9998;
+	color: #ffffcc; 
+	background-image: url("../images/image.png");
+	background-repeat: no-repeat;
+	align-items: center;
+}
+.phrase{
+	text-align: center;
+}
