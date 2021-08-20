@@ -1,10 +1,27 @@
 
+/* #bodybox{
+  display: inline-flexbox;
+} */
+#titleBox{
+  display: flex;
+}
+#titleStyle1{
+  padding-top: 2.5%;
+  width: 25%;
+  float: left;
+  height: 95%;
+}
+#titleStyle2{
+  padding-top: 2.5%;
+ width:25%;
+  float:right;
+  height: 95%;
+}
 #SlotsTitle{ 
   width: 50%;
   margin-left: auto; 
   margin-right: auto;
   display:block;
- 
 }
 
 #HowToPlayBtn{
@@ -77,7 +94,6 @@ body {
   justify-items: center;
   justify-content: center; 
   height: 1100px;
-  /* background: url("./images/slotsMachine.png") no-repeat center; */
   background: url("./images/slotMachineTrial.png") no-repeat center;
   background-size: 800px;
   padding-top: 25px;
@@ -86,9 +102,10 @@ body {
   position: relative;
   margin-bottom: 0.5rem;
   font-family: "Roboto", sans-serif;
+  
   /* color: lighten(#edfaf9 10%); */
 }
-.changes {
+/* .changes {
   position: absolute;
   display: inline-flex;
   top: 1rem;
@@ -100,7 +117,39 @@ body {
   animation-duration: 1s;
   animation-name: slideinLeft;
   animation-fill-mode: forwards;
+} */
+.changes {
+  position: absolute;
+  display: inline-flex;
+  /* top: 1rem;  */
+  font-weight: bold;
+  
 }
+.change {
+  color: white; 
+  padding-left: 0.5rem; 
+  animation-duration: 3000ms;
+  animation-name: slideinLeft;
+  animation-fill-mode: forwards;
+  animation-name: fadingAway;
+  
+}
+@keyframes fadingAway{
+0%{
+  opacity: 1;
+  transform: rotateX(90deg);
+}
+50%{
+  opacity: 0.5;
+  transform: rotateX(0deg);
+}
+100%{
+  display:none;
+  opacity: 0;
+  transform: rotateX(90deg);
+}
+}
+
 #money {
   font-size: 2rem;
   display: inline;
@@ -112,6 +161,26 @@ body {
   padding-top: 2px;
   padding-bottom: 2px;
 }
+ #userChips{ /*container */
+  position: sticky;
+  display: inline-block;
+  top: 0px;
+  font-size: 20px;
+  /* text-align: left; */
+  border-width: 6px;
+  border-style: double;
+  border-color: #dbaa40;
+  background-color: rgba(0, 0, 0, 0.295);
+  width: 12%;
+  font-weight: bold;
+  color:white;
+  margin-left:85%;
+  padding-left:10px;
+
+}
+
+
+
 .play-area {
   position: relative;
   display: flex;
@@ -172,21 +241,7 @@ body {
   margin-top: 5px;
   
 }
-#userChips{
-  position: sticky;
-  top: 0px;
-  font-size: 20px;
-  /* text-align: left; */
-  border-width: 6px;
-  border-style: double;
-  border-color: #dbaa40;
-  background-color: rgba(0, 0, 0, 0.295);
-  width: 25%;
-  font-weight: bold;
-  color:white;
-  margin-left:75%;
 
-}
 *, *::after, *::before{
   box-sizing: border-box;
 }
