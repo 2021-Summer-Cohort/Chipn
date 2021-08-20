@@ -4,22 +4,22 @@ import {displayWelcome} from "./welcome";
 
 export function displaySignupForm() {
     const signupForm = `
-    <div class="form-21">
-        <h1> YOU MUST BE 21 OR OLDER TO PLAY!</h1>
-        <p class='text-danger' id='login-response'>Please sign up to enter the casino.</p>
-        <label for="SignupAccount_UserName">User Name: </label>
-        <input type="text" id="SignupAccount_UserName" />
-        <label for="SignupAccount_Email">Email: </label>
-        <input type="email" id="SignupAccount_Email" />
-        <label for="SignupAccount_Age">Age: </label>
-        <input type="number" id="SignupAccount_Age" />
-        <label for="SignupAccount_Password">Password: </label>
-        <input type="password" id="SignupAccount_Password" />
+        <div class="signup-login">
+            <h1>YOU MUST BE 21 OR OLDER TO PLAY!</h1>
+            <p class='text-danger' id='login-response'>Please sign up to enter the casino.</p>
+            <label for="SignupAccount_UserName">User Name: </label><br />
+            <input type="text" id="SignupAccount_UserName" /><br /><br />
+            <label for="SignupAccount_Email">Email: </label><br />
+            <input type="email" id="SignupAccount_Email" /><br /><br />
+            <label for="SignupAccount_Age">Age: </label><br />
+            <input type="number" id="SignupAccount_Age" /><br /><br />
+            <label for="SignupAccount_Password">Password: </label><br />
+            <input type="password" id="SignupAccount_Password" /><br /><br />
 
-        <input type="hidden" id="SignupAccount_ChipCount" value="100">
+            <input type="hidden" id="SignupAccount_ChipCount" value="100">
 
-        <button id="signup-cancel">Cancel</button>
-        <button id="signup-submit">Submit</button>
+            <button id="signup-cancel">Cancel</button>
+            <button id="signup-submit">Submit</button>
         </div>
     `;
     return signupForm;
@@ -61,7 +61,7 @@ export function signupAccountSubmit() {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(RequestBody)
+        body:JSON.stringify(RequestBody)
     }).then(response => response.json()).then(data => {
         if(data.status == "422") {
             document.getElementById("login-response").innerHTML = "Your user name is not available. Please try a different one.";

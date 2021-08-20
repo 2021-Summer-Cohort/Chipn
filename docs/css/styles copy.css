@@ -166,100 +166,9 @@ body {
 }
 /* END NAV BAR STYLES*/
 
-
-
-/* BEGIN ACCOUNT ASIDE STYLES */
-#account.logged-in {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	position: sticky;
-	top: 0;
-	z-index: 1;
-}
-#leader-board {
-	background-color: blue;
-}
-
-#user-info {
-	background-color: rgba(0, 0, 0, 0.555);
-	color:#dbaa40;
-}
-
-#account-container {
-	position: sticky;
-	top: 0;
-	width: 100%;
-	z-index: 1;
-}
-#account.logged-out {
-	position: absolute;
-	top: 0;
-	height: 100vh;
-	width: 100%;
-	z-index: 1;
-	background-color:  rgba(0, 0, 0, 0.575);
-	background-image: url("../images/Dealer.png");
-	background-size: 350px;
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	align-items: center;
-	color: #ffffcc;
-}
-.signup-login {
-	display: inline-block;
-	border-style: solid;
-	border-image: url("../images/borderSquare.png") 30% stretch;
-	border-width:100px;
-	background-color: rgba(0, 0, 0, 0.575);
-	text-align: center;
-	margin: 5% 25%;
-}
-
-#account.welcome {
-	position: absolute;
-	top: 0;
-	height: 100vh;
-	width: 100%;
-	z-index: 1;
-	background-color:  rgba(0, 0, 0, 0.575);
-	background-image: url("../images/DealerWink.gif");
-	background-size: 350px;
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	align-items: center;
-	color: #ffffcc;
-}
-.welcome-message {
-	display: inline-block;
-	border-style: solid;
-	border-image: url("../images/borderSquare.png") 30% stretch;
-	border-width:100px;
-	background-color: rgba(0, 0, 0, 0.575);
-	font-size: xx-large;
-	text-align: center;
-	margin: 5% 25%;
-}
-.welcome-message a:link, .welcome-message a:visited {
-	color: silver;
-}
-.welcome-message a:hover, .welcome-message a:active {
-	color: #dbaa40;
-}
-.welcome-message button {
-	font-size: xx-large;
-}
-#account input {
-	margin: 2px;
-}
-/* END ACCOUNT ASIDE STYLES */
-
-
-
 /* BEGIN HOME PAGE AND VIDEO STYLES */
 main {
-	margin-bottom: 0;
-	padding-bottom: 0;
+	padding-bottom: 20px;
 }
 
 .home-phrase{
@@ -280,7 +189,6 @@ h2.home-phrase{
 }
 h3.home-phrase{
 	font-size: 24pt;
-	margin-bottom: 0;
 }
 
 .video-container {
@@ -374,6 +282,107 @@ h3.home-phrase{
 
 
 
+#account {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#leader-board {
+	background-color: blue;
+}
+
+#user-info {
+	background-color: rgba(0, 0, 0, 0.555);
+	color:#dbaa40;
+}
+
+#account.logged-out {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:  rgba(0, 0, 0, 0.575);
+	z-index: 9998;
+	color: #ffffcc; 
+	background-image: url("../images/Dealer.png")/*, linear-gradient(to bottom, rgba(255,255,255,0) 20%,
+	rgba(255,255,255,1))*/
+;
+	background-size: 350px ;
+	background-repeat: no-repeat;
+	background-position: right top ;
+	align-items: center;
+	height:294%;
+}
+
+#account.welcome {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.575);
+	z-index: 9998;
+	color: #ffffcc; 
+	background-image: url("../images/DealerWink.gif");
+	background-size: 350px ;
+	background-repeat: no-repeat;
+	background-position: right top ;
+	align-items: right top ;
+	height:200%;
+}
+
+
+.form-21{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: left;
+	height:175px;
+	margin-top:5% ;
+	margin-left: 5%;
+	border-style: solid;
+	border-image: url("../images/borderSquare.png") 30% stretch;
+	border-width:100px;
+	background-color: rgba(0, 0, 0, 0.575);
+	max-width: 45%;
+}
+.login-signup{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: left;
+	height:175px;
+	margin-top:5% ;
+	margin-left: 5%;
+	border-style: solid;
+	border-image: url("../images/borderSquare.png") 30% stretch;
+	border-width:100px;
+	background-color: rgba(0, 0, 0, 0.575);
+	max-width: 45%;
+}
+.welcome-message{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: left;
+	height:175px;
+	padding-left: 5%;
+	padding-top: 2%;
+	padding-bottom:5%;
+	margin-top:5% ;
+	margin-left: 5%;
+	border-style: solid transparent;
+	border-image: url("../images/borderSquare.png") 30% stretch ;
+	background-color: rgba(0, 0, 0, 0.575);
+	max-width: 45%;
+}
 button{
 	border-color: #dbaa40;
 	border-width: 6px;
@@ -386,7 +395,6 @@ button{
 /* BEGIN FOOTER STYLES */
 #site-footer {
 	text-align: center;
-	margin-top: 0;
 }
 #copyright-statement {
 	color: #dbaa40;
