@@ -157,7 +157,7 @@ body {
 	padding-bottom: 10%;
 }
 	
-#site-nav hr, #site-footer hr {
+#site-nav hr, #site-footer hr, hr.title-line {
 	border-top: #dbaa40 solid 15px;
 	/* border-bottom: #8f6c20 solid 10px; */
 	margin: 0;
@@ -168,7 +168,39 @@ body {
 
 
 
+/* BEGIN PAGE TITLE STYLES */
+#titleBox {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 10px 0;
+}
+.titleStyle {
+	max-width: 25vw;
+	/* float: left; */
+	/* height: 95%; */
+	max-height: 150px;
+}
+#titleImage { 
+	/* width: 50%; */
+	max-height: 150px;
+	max-width: 45vw;
+	/* margin-left: auto; 
+	margin-right: auto; */
+}
+/* END PAGE TITLE STYLES */
+
+
+
 /* BEGIN ACCOUNT ASIDE STYLES */
+#account-container {
+	position: sticky;
+	top: 0;
+	height: 0;
+	width: 100%;
+	z-index: 1;
+}
+
 #account.logged-in {
 	display: flex;
 	flex-direction: row;
@@ -177,21 +209,48 @@ body {
 	top: 0;
 	z-index: 1;
 }
-#leader-board {
-	background-color: blue;
+#game-instructions {
+	padding: 10px;
 }
-
 #user-info {
 	background-color: rgba(0, 0, 0, 0.555);
 	color:#dbaa40;
+	padding: 10px;
+	margin: 10px;
+	border: solid #dbaa40 5px;
+}
+#account-username-container {
+	padding: 5px;
+}
+#account-chips-container {
+	padding: 5px;
+}
+/* #chip-changes {
+	max-height: 1em;
+	overflow: hidden;
+} */
+.change {
+	color: white;
+	animation-duration: 3000ms;
+	animation-fill-mode: forwards;
+	animation-name: fadingAway;
+}
+@keyframes fadingAway {
+	0%{
+		opacity: 1;
+		transform: rotateX(90deg);
+	}
+	50%{
+		opacity: 0.5;
+		transform: rotateX(0deg);
+	}
+	100%{
+		display: none;
+		opacity: 0;
+		transform: rotateX(90deg);
+	}
 }
 
-#account-container {
-	position: sticky;
-	top: 0;
-	width: 100%;
-	z-index: 1;
-}
 #account.logged-out {
 	position: absolute;
 	top: 0;
@@ -214,6 +273,9 @@ body {
 	background-color: rgba(0, 0, 0, 0.575);
 	text-align: center;
 	margin: 5% 25%;
+}
+#account input {
+	margin: 2px;
 }
 
 #account.welcome {
@@ -249,9 +311,6 @@ body {
 .welcome-message button {
 	font-size: xx-large;
 }
-#account input {
-	margin: 2px;
-}
 /* END ACCOUNT ASIDE STYLES */
 
 
@@ -262,7 +321,7 @@ main {
 	padding-bottom: 0;
 }
 
-.home-phrase{
+/* .home-phrase{
 	text-align: center;
 	color: #dbaa40;
 }
@@ -280,8 +339,9 @@ h2.home-phrase{
 }
 h3.home-phrase{
 	font-size: 24pt;
+	padding-bottom: 50px;
 	margin-bottom: 0;
-}
+} */
 
 .video-container {
 	/* background-image: url("/images/wallpaper.png");
@@ -314,11 +374,31 @@ h3.home-phrase{
 	.video {
 		clip-path: inset(50px 145px 30px 80px);
 	}
+	h1.home-phrase{
+		font-size: 72pt;
+		padding: 10px 0 0 0;
+		margin: 0;
+		}
+		h2.home-phrase{
+		font-size: 24pt;
+		padding: 0;
+		margin-top: -25px;
+		}
 }
 @media only screen and (max-width: 800px) {
 	.video {
 		clip-path: inset(1px 110px 10px 60px);
 	}
+	h1.home-phrase{
+		font-size: 36pt;
+		padding: 10px 0 0 0;
+		margin: 0;
+		}
+		h2.home-phrase{
+		font-size: 16pt;
+		padding: 0;
+		margin-top: -25px;
+		}
 }
 @media only screen and (max-width: 480px) {
 	.video-container {
@@ -326,13 +406,12 @@ h3.home-phrase{
 	}
 	#video-substitute {
 		display: block;
-		font-size: 36pt;
 	}
 	h1.home-phrase{
-		font-size: 24pt;
+		font-size: 18pt;
 	}
 	h2.home-phrase{
-		font-size: 16pt;
+		font-size: 12pt;
 	}
 	h3.home-phrase{
 		font-size: 12pt;
@@ -342,43 +421,12 @@ h3.home-phrase{
 
 
 
-/*https://coder-coder.com/background-image-opacity/#:~:text=There's%20no%20CSS%20property%20that,for%20the%20background%2Dimage%20property*/
-/* .hero {
-    position: relative; 
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero::before {    
-      content: "";
-      background-image: url('./images/logoRed.png');
-      background-size: cover;
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      opacity: 0.75;
-}
-
-#text_cont {
-  position: relative;
-  color: #ffffff;  
-  font-size: 14rem;
-  line-height: 0.9;
-  text-align: center;
-} */
-
-
-
 button{
 	border-color: #dbaa40;
 	border-width: 6px;
 	background-color:#dbaa40;
 	font-weight: bold;
+	color: rgb(63, 63, 63);
 }
 
 
@@ -387,9 +435,11 @@ button{
 #site-footer {
 	text-align: center;
 	margin-top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 #copyright-statement {
-	color: #dbaa40;
+	/* color: #dbaa40; */
+	color: #99772e;
 	font-size: 11pt;
 }
 #litty {

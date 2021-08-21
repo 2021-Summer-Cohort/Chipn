@@ -4,14 +4,14 @@ export const gameURL = "https://localhost:44336/api/Game/";
 export const accountGameURL = "https://localhost:44336/api/AccountGame/";
 
 import {getCookie} from "./cookie";
-import {IsDefined,IsNotEmpty} from "./conditional";
+import {isDefined,isNotEmpty} from "./conditional";
 
 
 export function getAccount(accountId, callback)
 {
-   fetch(accountURL + accountId)
-   .then(response => response.json())
-   .then(data => {callback(data)});
+    fetch(accountURL + accountId)
+    .then(response => response.json())
+    .then(data => {callback(data)});
 }
 
 
@@ -19,17 +19,17 @@ export function getAccount(accountId, callback)
 // ModifyChipCount(-30);  Adds
 // UpdateStuff({Email:"email@email",ChipCount:30});
 
-export function setChipCount(NewChipCount) // Sets a static value to overwrite existing chip count
+export function setChipCount(newChipCount) // Sets a static value to overwrite existing chip count
 {
-   let accountId = getCookie("UserId");
-   if(IsNotEmpty(accountId))
-   {
-      var RequestBody=null;
-      fetch(accountURL+accountId).then(r=>r.json()).then(d=>{
-         RequestBody={
+    let accountId = getCookie("UserId");
+    if(isNotEmpty(accountId))
+    {
+        var RequestBody=null;
+        fetch(accountURL+accountId).then(r=>r.json()).then(d=>{
+          RequestBody={
             Id:accountId,
             age:d.age,
-            chipCount:NewChipCount,
+            chipCount:newChipCount,
             email:d.email,
             password:d.password,
             userName:d.userName
@@ -54,7 +54,7 @@ export function setChipCount(NewChipCount) // Sets a static value to overwrite e
 export function modifyChipCount(ChipsToChange) // Can be positive or negative
 {
    let accountId = getCookie("UserId");
-   if(IsNotEmpty(accountId))
+   if(isNotEmpty(accountId))
    {
       var RequestBody=null;
       fetch(accountURL+accountId).then(r=>r.json()).then(d=>{
@@ -86,17 +86,17 @@ export function modifyChipCount(ChipsToChange) // Can be positive or negative
 export function updateStuff(NewRequestBody)
 {
    let accountId = getCookie("UserId");
-   if(IsNotEmpty(accountId))
+   if(isNotEmpty(accountId))
    {
       var RequestBody=null;
       fetch(accountURL+accountId).then(r=>r.json()).then(d=>{
          RequestBody={
-            Id:((IsDefined(NewRequestBody.AccountId))?NewRequestBody.AccountId:accountId),
-            age:((IsDefined(NewRequestBody.Age))?NewRequestBody.Age:d.age),
-            chipCount:((IsDefined(NewRequestBody.ChipCount))?NewRequestBody.ChipCount:d.chipCount),
-            email:((IsDefined(NewRequestBody.Email))?NewRequestBody.Email:d.email), //email@email
-            password:((IsDefined(NewRequestBody.Password))?NewRequestBody.Password:d.password),
-            userName:((IsDefined(NewRequestBody.UserName))?NewRequestBody.UserName:d.userName)
+            Id:((isDefined(NewRequestBody.AccountId))?NewRequestBody.AccountId:accountId),
+            age:((isDefined(NewRequestBody.Age))?NewRequestBody.Age:d.age),
+            chipCount:((isDefined(NewRequestBody.ChipCount))?NewRequestBody.ChipCount:d.chipCount),
+            email:((isDefined(NewRequestBody.Email))?NewRequestBody.Email:d.email), //email@email
+            password:((isDefined(NewRequestBody.Password))?NewRequestBody.Password:d.password),
+            userName:((isDefined(NewRequestBody.UserName))?NewRequestBody.UserName:d.userName)
          };
          fetch(accountURL + accountId,{
             method:"PUT",

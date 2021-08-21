@@ -3,7 +3,7 @@ import {displaySignupForm, setupSignupForm} from "./signup";
 import {displayUpdateForm, setupUpdateForm} from "./update";
 import * as API from "../utilities/api-actions";
 import {getCookie, setCookie, deleteCookie} from "../utilities/cookie";
-import {IsNotEmpty} from "../utilities/conditional";
+import {isNotEmpty} from "../utilities/conditional";
 
 let accountId;
 
@@ -18,14 +18,14 @@ export function populateAccountAside() {
     accountId = getCookie("UserId");
     const accountAside = document.getElementById("account");
 
-    if(IsNotEmpty(accountId))
+    if(isNotEmpty(accountId))
     {
         accountAside.className = "logged-in";
 
-        let leaderBoard = document.createElement("div");
-        leaderBoard.id = "leader-board";
-        leaderBoard.innerText = " ";
-        accountAside.appendChild(leaderBoard);
+        let gameInstructions = document.createElement("div");
+        gameInstructions.id = "game-instructions";
+        gameInstructions.innerText = " ";
+        accountAside.appendChild(gameInstructions);
 
         let userInfoContainer = document.createElement("div");
         userInfoContainer.id = "user-info-container";
@@ -41,24 +41,50 @@ export function populateAccountAside() {
 
         const userInfoDiv = document.getElementById("user-info");
 
+        userInfoDiv.innerHTML =`
+            <div id="account-username-container">User: 
+                <span id="account-username"> </span>
+            </div>
+            <div id="account-chips-container">Chips: 
+                <span id="account-chips"> </span>
+                <span id="chips-change"> </span>
+            </div>
+            <button id="add-chips">Add More Chips</button>
+            <button id="account-logout" class="account-button">Logout</button>
+            <button id="account-update" class="account-button">Update</button>
+        `;
+
+        const usernameSpan = document.getElementById("account-username");
+        const chipsSpan = document.getElementById("account-chips");
+
+        const addChipsButton = document.getElementById("add-chips");
+        addChipsButton.style.display = "none";
+
+        const logoutButton = document.getElementById("account-logout");
+        const updateButton = document.getElementById("account-update");
+
         API.getAccount(accountId, data => {
             if(data.chipCount <= 5) {
-                let message = data.chipCount <= 0 ? 'You are out of chips!' : data.chipCount + " (running low...)";
-                userInfoDiv.innerHTML =`
-                    <span id="account-username">${data.userName}</span>
-                    <span id="account-chips">${message}</span>
-                    <button id="add-chips">Add More Chips</button>
-                    <button id="account-logout" class="account-button">Logout</button>
-                    <button id="account-update" class="account-button">Update</button>
-                `;
+                let addChipsMessage = data.chipCount <= 0 ? 'You are out of chips!' : data.chipCount + " (running low...)";
+                usernameSpan.innerText = data.userName;
+                chipsSpan.innerText = addChipsMessage;
+                addChipsButton.style.display = "inline";
 
-                const addChipsButton = document.getElementById("add-chips");
-                const logoutButton = document.getElementById("account-logout");
-                const updateButton = document.getElementById("account-update");
+                // userInfoDiv.innerHTML =`
+                //     <span id="account-username">${data.userName}</span>
+                //     <span id="account-chips">${message}</span>
+                //     <button id="add-chips">Add More Chips</button>
+                //     <button id="account-logout" class="account-button">Logout</button>
+                //     <button id="account-update" class="account-button">Update</button>
+                // `;
+
+                // const addChipsButton = document.getElementById("add-chips");
+                // const logoutButton = document.getElementById("account-logout");
+                // const updateButton = document.getElementById("account-update");
 
                 addChipsButton.addEventListener("click", () => {
                     let chipsToAdd = 100;
-                    API.setChipCount(chipsToAdd);
+                    API.modifyChipCount(chipsToAdd);
                     // userInfoDiv.innerHTML =`
                     //     <span id="account-username">${data.userName}</span>
                     //     <span id="account-chips">${data.chipCount + chipsToAdd}</span>
@@ -67,8 +93,8 @@ export function populateAccountAside() {
                     // `;
 
                     // document.getElementById("account-username").innerText = data.userName;
-                    document.getElementById("account-chips").innerText = data.chipCount + chipsToAdd;
-                    document.getElementById("add-chips").style.display = "none";
+                    chipsSpan.innerText = data.chipCount + chipsToAdd;  // "data" AVAILABLE?
+                    addChipsButton.style.display = "none";
                 });
                 logoutButton.addEventListener("click", () => {
                     deleteCookie("UserId");
@@ -79,15 +105,18 @@ export function populateAccountAside() {
                     setupUpdateForm();
                 });
             } else {
-                userInfoDiv.innerHTML =`
-                    <span id="account-username">${data.userName}</span>
-                    <span id="account-chips">${data.chipCount}</span>
-                    <button id="account-logout" class="account-button">Logout</button>
-                    <button id="account-update" class="account-button">Update</button>
-                `;
+                usernameSpan.innerText = data.userName;
+                chipsSpan.innerText = data.chipCount;
 
-                const logoutButton = document.getElementById("account-logout");
-                const updateButton = document.getElementById("account-update");
+                // userInfoDiv.innerHTML =`
+                //     <span id="account-username">${data.userName}</span>
+                //     <span id="account-chips">${data.chipCount}</span>
+                //     <button id="account-logout" class="account-button">Logout</button>
+                //     <button id="account-update" class="account-button">Update</button>
+                // `;
+
+                // const logoutButton = document.getElementById("account-logout");
+                // const updateButton = document.getElementById("account-update");
 
                 logoutButton.addEventListener("click", () => {
                     deleteCookie("UserId");
@@ -117,15 +146,6 @@ export function populateAccountAside() {
 
         const signupButton = document.getElementById("account-signup");
         const loginButton = document.getElementById("account-login");
-
-        // signupButton.addEventListener('click', () => {
-        //     accountAside.innerHTML = displaySignupForm();
-        //     setupSignupForm();
-        // });
-        // loginButton.addEventListener('click', () => {
-        //     accountAside.innerHTML = displayLoginForm();
-        //     setupLoginForm();
-        // });
 
         signupButton.addEventListener('click', () => {
             accountAside.innerHTML = displaySignupForm();

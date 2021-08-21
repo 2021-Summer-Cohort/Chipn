@@ -1,3 +1,6 @@
+addPageTitle("titleBlackjack.gif");
+
+
 // const tableDiv = document.getElementById("table");
 const dealerCardsDiv = document.getElementById("dealer-cards");
 const seat1CardsDiv = document.getElementById("seat1-cards");
@@ -15,6 +18,7 @@ const hitButton = document.getElementById("hit");
 const newRoundButton = document.getElementById("new-round");
 
 const accountId = _getCookie("UserId");
+// console.log(accountId);
 const chipsSpan = document.getElementById("account-chips");
 let currentChips;
 
@@ -59,7 +63,7 @@ playersDealOrder.sort(function(a, b) {
 
 playersDealOrder.push(dealer);
 
-console.log(playersDealOrder);
+// console.log(playersDealOrder);
 
 
 
@@ -135,7 +139,7 @@ placeBetButton.addEventListener("click", () => {
         betAmountInput.style.display = "none";
         placeBetButton.style.display = "none";
         dealButton.style.display = "inline";
-        document.getElementById("seat4-bet").innerHTML = "Your bet: " + betAmount; // TODO: Add to player array
+        document.getElementById("seat4-bet").innerHTML = "Your bet:<br />" + betAmount; // TODO: Add to player array
     }
 });
 
@@ -311,7 +315,8 @@ function settleUp() {
     }
 
     _modifyChipCount(changeToChips);
-    document.getElementById("seat4-bet").innerHTML = statement;
+    setChange(changeToChips);
+    document.getElementById("seat4-payout").innerHTML = statement;
     document.getElementById("account-chips").innerText = currentChips + changeToChips;
 
     newRoundButton.style.display = "inline";
@@ -351,4 +356,17 @@ newRoundButton.addEventListener("click", function() {
     betAmountInput.style.display = "inline";
     placeBetButton.style.display = "inline";
     document.getElementById("seat4-bet").innerHTML = " ";
+    document.getElementById("seat4-payout").innerHTML = " ";
 });
+
+let setChange = change => {
+    let changes = document.querySelector("#chips-change");
+    let newChange = document.createElement("span");
+    newChange.innerHTML = change > 0 ? `+${change}` : change;
+    newChange.classList.add("change");
+    if (change < 0) newChange.classList.add("negative");
+    changes.prepend(newChange);
+    if (changes.children.length > 1) {
+      changes.removeChild(changes.lastElementChild);
+    }
+  };

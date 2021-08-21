@@ -5,16 +5,17 @@ body {
 #table {
     display: grid;
     /* grid-template-columns: 100px 100px 100px 300px 100px 100px 100px; */
-    grid-template-columns: 10% 10% 10% 40% 10% 10% 10%;
+    grid-template-columns: 10% 10% 10% 12% 16% 12% 10% 10% 10%;
     grid-template-rows: 80px 130px 130px 130px 80px;
-    margin: 2rem auto;
+    margin: 0 auto 2rem auto;
+    padding-top: 4rem;
     width: 100%;
 }
 #buttons {
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 5;
+    grid-column-end: 6;
     text-align: center;
     margin: auto;
 }
@@ -22,31 +23,31 @@ body {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 3;
-    grid-column-end: 6;
+    grid-column-end: 8;
 }
 #seat4-cards { /* Player's seat */
     grid-row-start: 4;
     grid-row-end: 6;
     grid-column-start: 3;
-    grid-column-end: 6;
+    grid-column-end: 8;
 }
 #seat1-cards {
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 6;
-    grid-column-end: 8;
+    grid-column-start: 8;
+    grid-column-end: 10;
 }
 #seat2-cards {
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 5;
-    grid-column-end: 8;
+    grid-column-start: 7;
+    grid-column-end: 10;
 }
 #seat3-cards {
     grid-row-start: 4;
     grid-row-end: 5;
-    grid-column-start: 5;
-    grid-column-end: 7;
+    grid-column-start: 7;
+    grid-column-end: 9;
 }
 #seat5-cards {
     grid-row-start: 4;
@@ -71,6 +72,7 @@ body {
     display: inline;
     text-align: center;
     color: white;
+    font-size: 12pt;
     font-variant: small-caps;
 }
 .card {
@@ -79,29 +81,38 @@ body {
 .other-player .card {
     width: 75px;
 }
+
+#seat4-payout { /* Player's bet */
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 6;
+    grid-column-end: 7;
+    font-size: 14pt;
+}
 #seat4-bet { /* Player's bet */
     grid-row-start: 3;
     grid-row-end: 4;
     grid-column-start: 4;
     grid-column-end: 5;
+    font-size: 24pt;
 }
 #seat1-bet {
     grid-row-start: 1;
     grid-row-end: 2;
-    grid-column-start: 6;
-    grid-column-end: 8;
+    grid-column-start: 8;
+    grid-column-end: 10;
 }
 #seat2-bet {
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 5;
-    grid-column-end: 8;
+    grid-column-start: 7;
+    grid-column-end: 10;
 }
 #seat3-bet {
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 5;
-    grid-column-end: 7;
+    grid-column-start: 7;
+    grid-column-end: 9;
 }
 #seat5-bet {
     grid-row-start: 3;
@@ -123,8 +134,21 @@ body {
 }
 .bet {
     border: 2px solid black;
+    padding: 2px;
     display: inline;
     text-align: center;
     color: white;
     font-variant: small-caps;
+}
+
+#buttons button, #seat4-cards button, #seat4-cards input {
+    margin: 5px;
+    font-size: 1.25em;
+}
+button:disabled {
+	border-color: #b4b4b4;
+	border-width: 6px;
+	background-color:#999999;
+	font-weight: bold;
+	color: rgb(85, 85, 85);
 }

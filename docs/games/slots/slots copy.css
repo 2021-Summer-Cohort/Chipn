@@ -27,7 +27,6 @@
 #HowToPlayBtn{
   margin-left: 5%;
   margin-top: 2%;
-  z-index: 99;
 }
 #HowToPlayBtn{
   border-color:#dbaa40;
@@ -99,21 +98,34 @@ body {
   background-size: 800px;
   padding-top: 25px;
 }
-
-
-/* 
 .money-container {
   position: relative;
   margin-bottom: 0.5rem;
   font-family: "Roboto", sans-serif;
+  
+  /* color: lighten(#edfaf9 10%); */
 }
+/* .changes {
+  position: absolute;
+  display: inline-flex;
+  top: 1rem;
+  font-weight: bold;
+}
+.change {
+  color: white;
+  padding-left: 0.5rem;
+  animation-duration: 1s;
+  animation-name: slideinLeft;
+  animation-fill-mode: forwards;
+} */
 
 .changes {
   position: absolute;
   display: inline-flex;
+  /* top: 1rem;  */
   font-weight: bold;
-  
 }
+
 .change {
   color: white; 
   padding-left: 0.5rem; 
@@ -150,11 +162,12 @@ body {
   padding-top: 2px;
   padding-bottom: 2px;
 }
- #userChips{
+ #userChips{ /*container */
   position: sticky;
   display: inline-block;
   top: 0px;
   font-size: 20px;
+  /* text-align: left; */
   border-width: 6px;
   border-style: double;
   border-color: #dbaa40;
@@ -165,7 +178,7 @@ body {
   margin-left:85%;
   padding-left:10px;
 
-} */
+}
 
 
 

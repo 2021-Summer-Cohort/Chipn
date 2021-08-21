@@ -1,18 +1,20 @@
-export function IsDefined(VarToPass)
+export function isDefined(varToPass)
 {
-   if(VarToPass!==undefined)
-      return true;
-   return false;
+    if(varToPass !== undefined)
+        return true;
+    return false;
 }
-export function IsNotNull(VarToPass)
+
+export function isNotNull(varToPass)
 {
-   if(VarToPass!==null&&VarToPass!==undefined)
-      return true;
-   return false;
+    if(varToPass!==null&&varToPass!==undefined)
+        return true;
+    return false;
 }
-export function IsNotEmpty(VarToPass)
+
+export function isNotEmpty(varToPass)
 {
-   if(VarToPass!==null&&VarToPass!==undefined&&VarToPass!=="")
-      return true;
-   return false;
+    if(varToPass!==null&&varToPass!==undefined&&varToPass!=="")
+        return true;
+    return false;
 }

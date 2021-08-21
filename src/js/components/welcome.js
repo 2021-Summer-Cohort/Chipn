@@ -5,7 +5,8 @@ export function displayWelcome() {
 
     accountAside.innerHTML =`
         <div class="welcome-message">
-            <p>Welcome to Chip'n! You can learn more <a href="/about/">about the developers</a> or <a href="/games/">start playing</a> now. Please game responsibly.</p>
+            <img src="/images/welcomeBlink.gif" alt="Welcome" style="width: 30vw; margin: auto;" />
+            <p>Please game responsibly.</p>
             <button id="welcome-enter">Enter Chip'n</button>
         </div>
     `;
