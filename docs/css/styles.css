@@ -218,6 +218,7 @@ body {
 	padding: 10px;
 	margin: 10px;
 	border: solid #dbaa40 5px;
+	font-size: 18pt;
 }
 #account-username-container {
 	padding: 5px;
@@ -321,7 +322,7 @@ main {
 	padding-bottom: 0;
 }
 
-/* .home-phrase{
+.home-phrase{
 	text-align: center;
 	color: #dbaa40;
 }
@@ -341,7 +342,7 @@ h3.home-phrase{
 	font-size: 24pt;
 	padding-bottom: 50px;
 	margin-bottom: 0;
-} */
+}
 
 .video-container {
 	/* background-image: url("/images/wallpaper.png");
@@ -421,7 +422,7 @@ h3.home-phrase{
 
 
 
-button{
+button {
 	border-color: #dbaa40;
 	border-width: 6px;
 	background-color:#dbaa40;
@@ -435,6 +436,7 @@ button{
 #site-footer {
 	text-align: center;
 	margin-top: 0;
+	padding-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.7);
 }
 #copyright-statement {

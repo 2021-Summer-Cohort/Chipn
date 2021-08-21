@@ -30,8 +30,7 @@ export function setupSignupForm() {
     const SignupAccount_Cancel=document.getElementById("signup-cancel");
 
     SignupAccount_Submit.addEventListener("click",function(){
-        // signupAccountSubmit();
-        displayWelcome();
+        signupAccountSubmit();
     });
     SignupAccount_Cancel.addEventListener("click",function(){
         location.reload();

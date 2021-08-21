@@ -29,7 +29,7 @@
   margin-top: 2%;
   z-index: 99;
 }
-#HowToPlayBtn{
+/* #HowToPlayBtn{
   border-color:#dbaa40;
   border-width: 6px;
   border-style: double;
@@ -42,7 +42,7 @@
 background-color:#dbaa40;
 color:black;
 border-color: black;
-}
+} */
 /* #HowToPlayBtn{
   text-decoration: none;
   color: black;
