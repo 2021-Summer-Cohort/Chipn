@@ -301,6 +301,9 @@ function Win() {
   winCount++; // updates win count
   gameCount++;
   elWinOrLoss.innerHTML = 'You Won!';
+  _modifyChipCount(betAmt * 1);
+  currentChips += betAmt;
+  document.getElementById("account-chips").innerText = currentChips;
   // ModifyChipCount(betAmt * 1);
   // // GetChipCount();
   // //chips += betAmt;
@@ -325,6 +328,9 @@ function Lose() {
   lossCount++;
   gameCount++;
   elWinOrLoss.innerHTML = 'You Lost!';
+  _modifyChipCount(-betAmt);
+  currentChips -= betAmt;
+  document.getElementById("account-chips").innerText = currentChips;
   // document.getElementById('id02').style.display = 'block';
   
   document.getElementById("roll-buttons").style.display = "none";
