@@ -38,6 +38,9 @@ export function loginAccountSubmit() {
         UserName:LoginAccount_UserName.value,
         Password:LoginAccount_Password.value
     };
+    console.log("Login RequestBody: " + RequestBody);
+    console.log("Login Name: " + RequestBody.UserName);
+    console.log("Login Password: " + RequestBody.Password);
     fetch(loginURL,{
         method:"POST",
         headers:{
@@ -45,6 +48,9 @@ export function loginAccountSubmit() {
         },
         body:JSON.stringify(RequestBody)
     }).then(response => response.json()).then(data => {
+        console.log("Data returned at login: " + data);
+        console.log("Data Name at login: " + data.UserName);
+        console.log("Data Password at login: " + data.Password);
         if(data.status == "404"){
             document.getElementById("login-response").innerHTML = "Your user name or password does not match our records.";
         }else{

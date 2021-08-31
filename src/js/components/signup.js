@@ -56,6 +56,7 @@ export function signupAccountSubmit() {
         Password: SignupAccount_Password.value,
         ChipCount: SignupAccount_ChipCount.value
     };
+    console.log("Signup RequestBody: " + RequestBody);
     fetch(accountURL, {
         method: "POST",
         headers: {
@@ -63,6 +64,7 @@ export function signupAccountSubmit() {
         },
         body:JSON.stringify(RequestBody)
     }).then(response => response.json()).then(data => {
+        console.log("Data returned at signup: " + data);
         if(data.status == "422") {
             document.getElementById("login-response").innerHTML = "Your user name is not available. Please try a different one.";
         } else {

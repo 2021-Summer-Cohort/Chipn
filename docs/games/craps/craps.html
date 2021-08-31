@@ -31,7 +31,7 @@
     <source src='../../sounds/dicethrow.wav' type="audio/wav">
   </audio>
 
-  <header id="CrapsHeader">
+  <!-- <header id="CrapsHeader">
     <nav>
       <ul>
         <li><h1>Oh, Craps!</h1></li>
@@ -44,7 +44,7 @@
         </li>
       </ul>
     </nav>
-  </header>
+  </header> -->
 
   <div id="the-game">
   
@@ -73,22 +73,37 @@
     </div>
 
     
-
+    <ul id="winsAndLosses">
+      <li id='crapWins'>Wins: 0</li>
+      <li id="crapLosses">Losses: 0</li>
+    </ul>
 
 
     <h2 id='winOrLoss'></h2>
 
+  <div id="user-controls">
+    <div id="bet-prompt">
+      How much would you like to bet?<br />
+      <input id="bet-amt" type="number" min="5" max="100" />
+      <button id="place-bet">Place Bet</button>
+    </div>
+
+    <div id="next-game">
+      <button id="play-again">Play Again</button>
+    </div>
+  <div id="roll-buttons">
     <button id='comeOutButton' class='roll-button' disabled>Come Out ROLL</button>
     <button id='pointRollButton' class='roll-button' disabled>POINT ROLL</button>
-
+  </div>
+  </div>
 
     <h2 id="theRoll"></h2>
 
 
-    <ul>
+    <!-- <ul>
       <li id='crapWins'>Wins: 0</li>
       <li id="crapLosses">Losses: 0</li>
-    </ul>
+    </ul> -->
 
     <div class="dice-board">
 

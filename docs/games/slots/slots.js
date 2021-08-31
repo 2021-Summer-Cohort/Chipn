@@ -1,3 +1,28 @@
+addPageTitle("titleSlots.gif");
+
+const howToPlayContent = `
+<div class="info">
+<button id="HowToPlayBtn" onclick="toggleInstructions()">How to Play</button>
+<div class="allInstructions">
+    <div class="instructions">
+        Press anywhere to spin the reels.<br /> Each spin costs 2 chips<br /> Match at least two on the middle row
+        to win!<br /> See prizes below.
+    </div>
+
+
+    <div class="prize-table">
+        <div class="doubles">
+        </div>
+        <div class="triples">
+        </div>
+        <!--<div id="dealer"><img id="dealerImage"src="./images/dealer2.png"/></div>-->
+    </div>
+</div>
+</div>
+`;
+
+addInstructions(howToPlayContent)
+
 /*const openModalButtons = document.querySelectorAll('[data-model-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
@@ -48,8 +73,8 @@ let money;
  _getAccount(accountId, (data) =>
 {
 money = data.chipCount;
-document.querySelector("#money").innerText = data.chipCount;
-document.querySelector("#slotsUser").innerText = "User: " + data.userName;
+document.querySelector("#account-chips").innerText = data.chipCount;
+document.querySelector("#account-username").innerText = data.userName;
 });
 
 let moneyToAdd = 0;
@@ -141,18 +166,18 @@ let moveReel = reelIndex => {
 
 let updateMoney = change => {
   money += change;
-  document.querySelector("#money").innerText = money;
+  document.querySelector("#account-chips").innerText = money;
   _modifyChipCount(change);
 };
 
 let setChange = change => {
-  let changes = document.querySelector(".changes");
-  let newChange = document.createElement("div");
+  let changes = document.querySelector("#chips-change");
+  let newChange = document.createElement("span");
   newChange.innerHTML = change > 0 ? `+${change}` : change;
   newChange.classList.add("change");
   if (change < 0) newChange.classList.add("negative");
   changes.prepend(newChange);
-  if (changes.children.length > 6) {
+  if (changes.children.length > 1) {
     changes.removeChild(changes.lastElementChild);
   }
 };

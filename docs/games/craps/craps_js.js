@@ -1,3 +1,21 @@
+addPageTitle("titleCraps.gif");
+
+const howToPlayContent = `
+<button id='btn-rules' style='margin-left: 20px;  font-size: 16pt;' >Rules</button>
+`;
+
+addInstructions(howToPlayContent)
+
+const accountId = _getCookie("UserId");
+let currentChips;
+_getAccount(accountId, (data) => {
+  currentChips = data.chipCount;
+});
+
+const nextGameDiv = document.getElementById("next-game");
+const playAgainButton = document.getElementById("play-again");
+nextGameDiv.style.display = "none";
+
 //import {getAccount} from "../../../src/js/api/actions";
 
 /*
@@ -16,13 +34,13 @@ FETCH.getAccount(accountId, data => {
 */
 
 const rulesBtn = document.getElementById("btn-rules");
-const betsBtn = document.getElementById("btn-bets");
+// const betsBtn = document.getElementById("btn-bets");
 const modal = document.getElementById("myModal");
 const placeBetBtn = document.getElementById("place-bet");
 const betInput = document.getElementById("bet-amt");
 const diceSound = document.getElementById("diceAudio");
 let betAmt = 0;
-document.getElementById('id02').style.display = 'block';
+// document.getElementById('id02').style.display = 'block';
 
 rulesBtn.addEventListener("click", function () {
   console.log("You clicked the li element");
@@ -36,28 +54,34 @@ rulesBtn.addEventListener("click", function () {
   // }
   document.getElementById('id01').style.display = 'block';
 });
-betsBtn.addEventListener("click", function () {
-  console.log("You clicked the li element");
-  document.getElementById('id02').style.display = 'block';
-});
+// betsBtn.addEventListener("click", function () {
+//   console.log("You clicked the li element");
+//   document.getElementById('id02').style.display = 'block';
+// });
 placeBetBtn.addEventListener("click", function () {
-  console.log(betInput.value + ">" + ChipCountInput.value);
+  // console.log(betInput.value + ">" + ChipCountInput.value);
   if (parseInt(betInput.value) === NaN) {
     alert("Enter a bet");
   }
   else if ((parseInt(betInput.value) < 5 || parseInt(betInput.value) > 100) || !betInput.value) {
     alert("Must make a bet between 5 and  100");
   }
-  else if (parseInt(betInput.value) > parseInt(ChipCountInput.value)) {
+  else if (parseInt(betInput.value) > parseInt(currentChips.value)) {
     alert("Not enough Chips");
   }
 
   else {
     betAmt = parseInt(betInput.value);
     console.log(betAmt);
-    document.getElementById('id02').style.display = 'none';
+    // document.getElementById('id02').style.display = 'none';
     elComeOut.disabled = false;
     elPointRoll.disabled = false;
+    document.getElementById("bet-prompt").style.display = "none";
+    
+  document.getElementById("roll-buttons").style.display = "block";
+    // document.getElementById("").style.display = none;
+    elComeOut.style.display = "block";
+    elWinOrLoss.innerHTML = "Let's roll!";
   }
 
 
@@ -124,16 +148,16 @@ function getCookie(cname) {
   }
   return "";
 }
-const ChipCountInput = document.getElementById("ChipCountInput");
-function GetChipCount() {
-  let accountId = getCookie("UserId");
-  getAccount(accountId, data => {
-    ChipCountInput.value = data.chipCount;
-    chips = ChipCountInput.value;
-    console.log("ChipCountInput.value=" + ChipCountInput.value);
-  });
-}
-GetChipCount();
+// const ChipCountInput = document.getElementById("ChipCountInput");
+// function GetChipCount() {
+//   let accountId = getCookie("UserId");
+//   getAccount(accountId, data => {
+//     ChipCountInput.value = data.chipCount;
+//     chips = ChipCountInput.value;
+//     console.log("ChipCountInput.value=" + ChipCountInput.value);
+//   });
+// }
+// GetChipCount();
 
 // var betInput     = document.getElementById('betField').value;
 // var bet          = parseInt(betInput);
@@ -277,11 +301,24 @@ function Win() {
   winCount++; // updates win count
   gameCount++;
   elWinOrLoss.innerHTML = 'You Won!';
-  ModifyChipCount(betAmt * 1);
-  GetChipCount();
-  //chips += betAmt;
-  console.log(chips);
-  document.getElementById('id02').style.display = 'block';
+  _modifyChipCount(betAmt * 1);
+  currentChips += betAmt;
+  document.getElementById("account-chips").innerText = currentChips;
+  // ModifyChipCount(betAmt * 1);
+  // // GetChipCount();
+  // //chips += betAmt;
+  // console.log(chips);
+  // document.getElementById('id02').style.display = 'block';
+
+  document.getElementById("roll-buttons").style.display = "none";
+  // elPointRoll.style.display = "none";
+  // elComeOut.style.display = "none";
+  nextGameDiv.style.display = "block";
+  playAgainButton.addEventListener("click", () => {
+    nextGameDiv.style.display = "none";
+    document.getElementById("bet-prompt").style.display = "block";
+    elWinOrLoss.innerHTML = '';
+  });
   elComeOut.disabled = true;
     elPointRoll.disabled = true;
  
@@ -290,8 +327,21 @@ function Lose() {
   console.log('You lost!');
   lossCount++;
   gameCount++;
-  elWinOrLoss.innerHTML = 'LOSER!';
-  document.getElementById('id02').style.display = 'block';
+  elWinOrLoss.innerHTML = 'You Lost!';
+  _modifyChipCount(-betAmt);
+  currentChips -= betAmt;
+  document.getElementById("account-chips").innerText = currentChips;
+  // document.getElementById('id02').style.display = 'block';
+  
+  document.getElementById("roll-buttons").style.display = "none";
+  // elPointRoll.style.display = "none";
+  // elComeOut.style.display = "none";
+  nextGameDiv.style.display = "block";
+  playAgainButton.addEventListener("click", () => {
+    nextGameDiv.style.display = "none";
+    document.getElementById("bet-prompt").style.display = "block";
+    elWinOrLoss.innerHTML = '';
+  });
   elComeOut.disabled = true;
     elPointRoll.disabled = true;
  
@@ -301,9 +351,9 @@ function Lose() {
   });
   */
   ModifyChipCount((betAmt * -1));
-  GetChipCount();
-  //chips -= betAmt;
-  console.log(chips);
+  // GetChipCount();
+  // //chips -= betAmt;
+  // console.log(chips);
   
   
 }

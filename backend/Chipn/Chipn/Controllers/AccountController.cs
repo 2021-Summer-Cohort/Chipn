@@ -23,19 +23,19 @@ namespace Chipn.Controllers
 
         [Route("Login")]
         [HttpPost]
-        public async Task<ActionResult<Account>> Login([FromBody] Account account)
-        {
+        public async Task<ActionResult<Account>> Login([FromBody]Account account)
+		{
             var user = await _context.Accounts.Where(a => a.UserName == account.UserName && a.Password == EncryptPassword(account.Password)).FirstOrDefaultAsync();
-            if (user == null)
-            {
+            if(user == null)
+			{
                 return NotFound();
-            }
-            else
-            {
+			}
+			else
+			{
                 user.Password = "";
                 return user;
-            }
-        }
+			}
+		}
 
         // GET: api/Account
         [HttpGet]
@@ -61,7 +61,7 @@ namespace Chipn.Controllers
                 return NotFound();
             }
 
-            account.Password = "";
+            //account.Password = "";
 
             return account;
         }
@@ -77,7 +77,7 @@ namespace Chipn.Controllers
             }
 
             _context.Entry(account).State = EntityState.Modified;
-            account.Password = EncryptPassword(account.Password);
+            //account.Password = EncryptPassword(account.Password);
 
             try
             {
@@ -114,6 +114,7 @@ namespace Chipn.Controllers
                 _context.Accounts.Add(account);
                 await _context.SaveChangesAsync();
 
+
                 account.Password = "";
                 return CreatedAtAction("GetAccount", new { id = account.Id }, account);
             }
@@ -141,7 +142,7 @@ namespace Chipn.Controllers
         }
 
         private string EncryptPassword(string password)
-        {
+		{
             //var hash = "";
             //do encryption
 
@@ -151,13 +152,14 @@ namespace Chipn.Controllers
             //hash.ToString();
 
             return System.Text.Encoding.Default.GetString(hash);
-        }
+            
+		}
 
-        private string VerifyPassword(string hash, string password)
-        {
+        private string VerifyPassword(string hash,string password)
+		{
             //var password = "";
-
-            if (EncryptPassword(password) == hash)
+            
+            if(EncryptPassword(password)==hash)
                 return password;
             else
                 return "";
@@ -165,6 +167,6 @@ namespace Chipn.Controllers
             // decrypt
 
             //return password;
-        }
+		}
     }
 }

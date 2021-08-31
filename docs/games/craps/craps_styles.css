@@ -18,13 +18,14 @@ body {
   perspective: 1000px;
   color: #ffffcc; 
 } 
-#BackgroundImage_Craps{
+#the-game{
   background-image: url("./images/crapsTableLogo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size:contain;
   /*background-attachment: fixed;*/
   min-height:650px;
+  padding-top: 100px;
 }  
 #pointRollButton {
   display: none; }
@@ -32,10 +33,24 @@ body {
 #winOrLoss {
   text-align: center; }
 #theRoll{
-  margin-left: 50px;
+  margin-left: 150px;
 }  
+#winsAndLosses {
+  list-style: none;
+  text-align: center;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35vw;
+}
 #crapWins, #crapLosses{
-  margin-left: 70px;
+  font-size: 18pt;
+}
+#crapWins{
+  color: #dbaa40;
+}
+#crapLosses{
+  color: rgb(128, 24, 24);
 }
   
 /* MODAL THINGS*/
@@ -104,7 +119,7 @@ header h1 {
   display: inline-block;
   list-style-type: none;    
 }
-#CrapsHeader nav ul li#btn-bets, li#btn-rules{
+li#btn-bets, li#btn-rules{
   max-height: 45px;
   margin: 15px;
   padding: 10px 50px;
@@ -122,12 +137,24 @@ header h1 {
 }
 
 /* BUTTONS */
+#user-controls {
+  text-align: center;
+  width: 100vw;
+  padding: 0 25vw;
+}
+#bet-prompt {
+  font-size: 16pt;
+}
 main, .roll-button {
-  display: block;
+  display: none;
   margin-bottom: 10px;
-  margin: 15px auto; }
+  margin: 0 auto 15px auto;
+ }
+ #the-game {
+  font-size: 16pt;
+ }
 
-#the-game button {
+/* #the-game button {
   padding: 10px 50px;
   color: #ffffcc;
   background: #AA4F39;
@@ -142,7 +169,7 @@ main, .roll-button {
   background: #802915;
   cursor: pointer;
   padding: 10px 50px 10px 50px;
-  margin-top: 0px;}
+  margin-top: 0px;} */
   
 .dice-board {
   text-align: center;
