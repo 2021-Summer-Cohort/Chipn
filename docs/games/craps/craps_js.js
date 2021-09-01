@@ -16,22 +16,7 @@ const nextGameDiv = document.getElementById("next-game");
 const playAgainButton = document.getElementById("play-again");
 nextGameDiv.style.display = "none";
 
-//import {getAccount} from "../../../src/js/api/actions";
 
-/*
-FETCH.getAccount(accountId, data => {
-            accountDiv.innerHTML =`
-            Name: ${data.userName}<br />
-            Chip Count: ${data.chipCount}<br />
-            <button id="logout">Logout</button>
-            `;
-            const logoutButton = document.getElementById("logout");
-            logoutButton.addEventListener("click", () => {
-                deleteCookie("UserId");
-                location.reload();
-            });
-        });
-*/
 
 const rulesBtn = document.getElementById("btn-rules");
 // const betsBtn = document.getElementById("btn-bets");
@@ -44,20 +29,10 @@ let betAmt = 0;
 
 rulesBtn.addEventListener("click", function () {
   console.log("You clicked the li element");
-  // if(modal.style.visibility !== "visible"){
-  //   modal.style.visibility = "visible";
-  //   modal.style.opacity = "1";
-  // }
-  // else{
-  //   modal.style.visibility = "hidden";
-  //   modal.style.opacity = "0";
-  // }
+
   document.getElementById('id01').style.display = 'block';
 });
-// betsBtn.addEventListener("click", function () {
-//   console.log("You clicked the li element");
-//   document.getElementById('id02').style.display = 'block';
-// });
+
 placeBetBtn.addEventListener("click", function () {
   // console.log(betInput.value + ">" + ChipCountInput.value);
   if (parseInt(betInput.value) === NaN) {
@@ -95,14 +70,8 @@ var gameCount = 0;
 var thePoint = 0;
 var chips = undefined;
 
-/*
-export function getAccount(accountId, callback)
-{
-   fetch(accountURL + accountId)
-   .then(response => response.json())
-   .then(data => {callback(data)});
-}
-*/
+
+
 const accountURL = "https://localhost:44336/api/Account/";
 function ModifyChipCount(ChipsToChange) //can be positive or negative.
 {
@@ -148,19 +117,7 @@ function getCookie(cname) {
   }
   return "";
 }
-// const ChipCountInput = document.getElementById("ChipCountInput");
-// function GetChipCount() {
-//   let accountId = getCookie("UserId");
-//   getAccount(accountId, data => {
-//     ChipCountInput.value = data.chipCount;
-//     chips = ChipCountInput.value;
-//     console.log("ChipCountInput.value=" + ChipCountInput.value);
-//   });
-// }
-// GetChipCount();
 
-// var betInput     = document.getElementById('betField').value;
-// var bet          = parseInt(betInput);
 
 var elDiceOne = document.getElementById('dice1');
 var elDiceTwo = document.getElementById('dice2');

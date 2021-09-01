@@ -23,9 +23,41 @@ const howToPlayContent = `
 
 addInstructions(howToPlayContent);
 
+/*const openModalButtons = document.querySelectorAll('[data-model-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
 
-// SOURCE: https://codepen.io/mog13/pen/VRBgNQ
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
 
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal){
+  if(modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+} 
+
+function closeModal(modal){
+  if(modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}*/
+
+// const modal = document.querySelector('#modal')
+// openModal(modal)
+
+// https://codepen.io/mog13/pen/VRBgNQ
+// 😂😍😅🤔😜🤐😱😵
 let reelContents = ["./images/spade.png", "./images/DonutCream.png" , "./images/heart.png", "./images/DonutRainbow.png", "./images/DonutPink.png", "./images/diamond.png", "./images/clover.png", "./images/Lit.png"];
 let reelLength = 3; //3
 let reelContainers = document.querySelectorAll(".reel-container");
